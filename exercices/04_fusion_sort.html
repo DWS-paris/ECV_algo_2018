@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Les algorithmes de tri : le tri en fusion</title>
+        <style>
+            footer,h1{text-transform:uppercase}*{margin:0;padding:0;box-sizing:border-box}html{font-size:62.5%}body{font-size:1.2rem;font-family:sans-serif;font-weight:100;padding:4rem;}img{float:left;width:14rem;margin-right:1rem}h1{font-weight:200;font-size:1.5rem;margin-bottom:1rem}footer,header,main{max-width:50rem;padding:2rem;margin:2rem auto}footer,header{border:.5rem solid #eee}footer{margin-top:5rem;font-size:1rem}ul { padding: 0 0 0 2rem; }li:first-child, li:last-child { list-style: none; font-weight: 800; font-size: 1.3rem; margin: 1rem 0 1rem -2rem;}header::after{content:'';display:block;clear:both;}
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Les algorithmes de tri : <b>le tri en fusion</b></h1>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Insertion_sort_animation.gif" alt="Wikipedia : Le tri en fusion">
+            <p>Cette méthode applique le principe de « diviser pour régner ». En effet, étant données deux collection de données triées et la longueur des collections, il est très facile d’obtenir une troisième collection de données triés de longueur égale à la taille des deux premières collections, par « interclassement » ou fusion des deux précédentes collections.</p>
+        </header>
+
+        <main>
+            <h2>Résultat</h2>
+            <ul></ul>
+        </main>
+
+        <footer>Under WTFPL Licence 2018 - Julien Noyer</footer>
+
+        <script>
+            /*
+            Declarations
+            */
+                let listTag = document.querySelector(`ul`);
+                let data = [6, 1, 12, 0, 25, 7, 29, 3, 45];
+                let bigData = [6, 1, 12, 0, 25, 7, 29, 3, 45, 9, 65, 2, 87, 30, 16, 5, 14, 67, 56, 8];
+                let fusionedArray = [];
+                let step = 0;
+            //
+
+            /*
+            Bubble Sort Javascript function
+            */
+            const bubbleSort = async (collection) => {
+                    // IHM
+                    listTag.innerHTML += `<li><b>Données de départ</b> [${collection}]</li>`
+
+                    // Declaration
+                    let sorted = false;
+                    let dataSize = collection.length;
+
+                    // Start sorting
+                    while( sorted === false ){
+                        // One step
+                        step++;
+
+                        // Inverse sorted value
+                        sorted = true;
+
+                        // Start iteration
+                        for( let i = 0; i < dataSize; i++ ){
+                            // One step
+                            step++;
+
+                            // Check if current data is higher than the next one
+                            if( collection[i] > collection[i + 1] ){
+                                
+                                // Inverse data
+                                let temp = collection[i + 1]
+                                collection[i + 1] = collection[i]
+                                collection[i] = temp
+                                sorted = false;
+
+                                // IHM
+                                listTag.innerHTML += `<li>Bulbble : <b>${collection[i]}</b> est plus grand que <b>${collection[i + 1]}</b></li>`;
+                            }
+                        }
+
+                        // Reduce iteration number
+                        dataSize--;
+                    }
+
+                    // IHM
+                    listTag.innerHTML += `<li><b>Données triées</b> [${collection}]</li>`
+                    
+                    // Send result
+                    return collection;
+                };
+            // 
+            
+
+            /*
+            Fusion Sort Javascript function
+            */
+                const fusionSort = async (collection) => {
+                    // IHM
+                    listTag.innerHTML += `<li>Données de départ : [${collection}]</li>`
+
+                    // Start first sorting
+                    let middle = parseInt(collection.length / 2);
+                    let rightData = collection.splice(middle, middle + 1)
+                    let leftData = collection;
+                    
+                    // Sort leftData
+                    let leftArray = await bubbleSort(leftData);
+                    
+                    // Sort rightArray
+                    let rightArray = await bubbleSort(rightData);
+
+                    // Concat leftArray and rightArray
+                    fusionedArray = [...leftArray, ...rightArray];
+
+                    // Sort fusionedArray
+                    let result = await bubbleSort(bigData)
+
+                    // IHM
+                    listTag.innerHTML += `<li>Tableau trié en ${step} étapes : [${result}]</li>`;
+                };
+            //
+
+            /*
+            Wait for DOM elements to call the function
+            */
+                document.addEventListener( "DOMContentLoaded", (event) => fusionSort(data) );
+            //
+        </script>
+    </body>
+</html>

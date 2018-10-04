@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Introduction",
+        "link": "01_Algorithmie_presentation_art.html"
+    },
+    {
+        "name": "Pseudo-code",
+        "link": "02_Algorithmie_representation_art.html"
+    },
+    {
+        "name": "Compléxité",
+        "link": "03_Algorithmie_complexite_art.html"
+    },
+    {
+        "name": "Le trie",
+        "link": "04_Algorithmie_tri_art.html"
+    },
+    {
+        "name": "Méthode PERT",
+        "link": "05_Algorithmie_pert_art.html"
+    }
+]

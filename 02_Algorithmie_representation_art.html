@@ -1,0 +1,156 @@
+<h1 id="le-pseudo-code-représentation-dun-algorithme">Le pseudo-code <em>Représentation d’un algorithme</em></h1>
+<p><img src="img/algoCoverRepre.jpg" /></p>
+<p>En algorithmie, le pseudo-code - ou LDA pour Langage de Description d’Algorithmes - est une façon de décrire un algorithme dans un langage presque naturel et limitant un maximum les références propres à tel ou tel langage de programmation : le but d’un algorithme est de pouvoir être traduit dans n’importe quel langage.</p>
+<p>L’écriture en pseudo-code permet de prendre toute la mesure de la difficulté de la mise en œuvre de l’algorithme, et de développer une démarche structurée dans la construction de celui-ci. Son aspect descriptif permet de décrire en détail l’algorithme et permet une vision qui passe outre certains aspects complexes propre à la programmation informatique.</p>
+<p>Dans la mesure ou il n’existe pas réellement de règles ou de convention établie pour l’écriture en pseudo-code, il est néanmoins nécessaire d’établir une structure - ou vocabulaire - qui puisse être comprit pas le plus grand nombre. Nous allons définir dans ce document la convention à suivre dans le cadre de la session de cours.</p>
+<h2 id="structure-dun-algorithme-en-pseudo-code">Structure d’un algorithme en pseudo-code</h2>
+<p>Dans la mesure ou notre pseudo-code doit représenter notre algorithme qui à pour but d’être développer et installer sur une machine, il faut respecter une structure informatique pour organiser le pseudo-code. Tous les pseudo-code doivent absolument respecter la structure suivante :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">ALGORITHME</span> <span class="op">&lt;</span>name_algo<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="ex">//</span> Déclarer les variables de l<span class="st">&#39;algorithme</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="st">START</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"><span class="st">  // Effectuer les functions de l&#39;</span>algorithme</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"><span class="ex">END</span></a></code></pre></div>
+<blockquote>
+<p>Quel que soit votre algorithme, il doit toujours contenir cette structure.</p>
+</blockquote>
+<h2 id="règles-générales">Règles générales</h2>
+<p>Chaque mot-clefs sera écrit en majuscules :</p>
+<ul>
+<li><strong>FONCTION</strong></li>
+<li><strong>TANT QUE</strong></li>
+<li><strong>SI / FIN SI</strong></li>
+<li><strong>SELON</strong></li>
+<li><strong>POUR</strong></li>
+</ul>
+<p>Le code peut être écrit en français - mais il est préférable d’utiliser l’anglais :</p>
+<ul>
+<li>FONCTION -&gt; <strong>FUNCTION</strong></li>
+<li>TANT QUE -&gt; <strong>WHILE</strong></li>
+<li>SI / FIN SI -&gt; <strong>IF / END IF</strong></li>
+<li>SELON -&gt; <strong>SWITCH</strong></li>
+<li>POUR -&gt; <strong>FOR</strong></li>
+</ul>
+<p>Les noms des variables et des fonctions sont en ASCII en sans espaces :</p>
+<ul>
+<li>user_age</li>
+<li>user_name</li>
+</ul>
+<p>Les commentaire sont écrit :</p>
+<ul>
+<li>// De cette manière</li>
+<li>/* De cette manière - multi-ligne */</li>
+</ul>
+<h2 id="typer-une-variable">Typer une variable</h2>
+<p>En algorithmie il est primordiale de typer les variables pour rendre la lecture du pseudo-code efficace. Les types possible utilisables sont :</p>
+<ul>
+<li><strong>INTEGER</strong> : 14, -345</li>
+<li><strong>FLOAT</strong> : 1.4, -76.98</li>
+<li><strong>BOOLEAN</strong> : True/False</li>
+<li><strong>CHAR</strong> : “a”, “T”</li>
+<li><strong>STRING</strong> : “Hello”, “bonjour”</li>
+<li><strong>ARRAY</strong> : [“algorithmie”, true, 18]</li>
+<li><strong><OBJECT_TYPE></strong> : USER, SKILLS</li>
+</ul>
+<p>Pour déclarer une variable et la typer, il faut donner un nom à la variable et ajouter le type après le symbol <code>:</code> comme dans les exemple ci-dessous :</p>
+<ul>
+<li>user_age: <strong>INTEGER</strong></li>
+<li>user_name: <strong>STRING</strong></li>
+</ul>
+<p>Pour affecter une valeur à une variables il faut utiliser une flèche droite/gauche de cette manière :</p>
+<ul>
+<li>user_age <strong>&lt;- 39</strong></li>
+<li>user_name <strong>&lt;- “Julien”</strong></li>
+</ul>
+<blockquote>
+<p>Il est possible de déclarer une variable, son type et son contenu d’une seule fois : <code>user_age: INTEGER &lt;- 39</code></p>
+</blockquote>
+<p>Les <strong>tableaux</strong> sont des collections permettant de stocker des données afin d’effectuer des boucle sur ces données. Les tableaux peuvent être de type unique ou multiple :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">//</span> Déclaration</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="ex">notes</span>: ARRAY<span class="op">&lt;</span>Number<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="ex">options</span>: ARRAY<span class="op">&lt;</span>STRING <span class="kw">|</span> <span class="ex">BOOLEAN</span><span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="ex">//</span> Affectation</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="ex">notes</span> <span class="op">&lt;</span>- [12, 15, 9]</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="ex">options</span> <span class="op">&lt;</span>- [ true, <span class="st">&quot;Off&quot;</span> ]</a></code></pre></div>
+<p>Un <strong><OBJECT_TYPE></strong> est une notion qui reprend la logique objet des langage de programmation. Selon notre programme nous pouvons avoir besoin de variables spécifiques que nous créerons de la manière suivante :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">//</span> Création</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="ex">OBJECT</span> User:</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="ex">name</span>: STRING</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4">  <span class="ex">age</span>: INTEGER</a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="ex">END</span> OBJECT</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="ex">//</span> Affectation</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="ex">newUser</span>: User</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="ex">//</span> Assignation</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="ex">newUser</span> <span class="op">&lt;</span>- { <span class="st">&quot;Juien&quot;</span>, 39 }</a></code></pre></div>
+<blockquote>
+<p>L’affectation et l’assignation peuvent être fait en une fois : <code>newUser: User &lt;- { &quot;Juien&quot;, 39 }</code></p>
+</blockquote>
+<h2 id="les-conditions">Les conditions</h2>
+<p>En programmation une condition <strong>SI / ET SI / SINON</strong> permet de tester une ou plusieurs variables pour lancer une ou des fonctions spécifiques :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">IF</span> user_age <span class="op">&lt;</span> 12 THEN</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="ex">PRINT</span>(<span class="st">&quot;User is a kid&quot;</span>)</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="ex">ELSE</span> ID user_age <span class="op">&lt;</span> 18</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="ex">PRINT</span>(<span class="st">&quot;User is a teenager&quot;</span>)</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="ex">ELSE</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">  <span class="ex">PRINT</span>(<span class="st">&quot;User is major&quot;</span>)</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="ex">END</span> IF</a></code></pre></div>
+<p>Lorsque qu’une condition comprend plusieurs possibilités pré-établie, il faut utiliser la boucle <strong>SELON</strong> :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">//</span> Declaration</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="ex">user_gender</span>: INTEGER <span class="op">&lt;</span>- 2</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="ex">SWITCH</span> user_gender</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">  <span class="ex">1</span> : PRINT(<span class="st">&quot;User is a woman&quot;</span>)</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">  <span class="ex">2</span> : PRINT(<span class="st">&quot;User is a man&quot;</span>)</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">  <span class="ex">3</span> : PRINT(<span class="st">&quot;User is a bot&quot;</span>)</a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">  <span class="ex">DEFAULT</span> PRINT(<span class="st">&quot;User gender unknow&quot;</span>)</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="ex">END</span> SWITCH</a></code></pre></div>
+<h2 id="les-boucles">Les boucles</h2>
+<p>Lorsque l’on traite de l’information en chaine il est souvent - voir toujours - utile de boucler sur une variable pour répéter un opération. Pour une boucle simple il faut utiliser la méthode <strong>TANT QUE</strong> :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">//</span> Declaration</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="ex">i</span>: INTEGER <span class="op">&lt;</span>- 20</a>
+<a class="sourceLine" id="cb6-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="ex">WHILE</span> i <span class="op">&lt;</span> 10</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">  <span class="ex">PRINT</span>(<span class="st">&quot;The value of &#39;i&#39; is: &quot;</span> + i)</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">  <span class="ex">i</span> <span class="op">&lt;</span>- i + 1</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="ex">END</span> WHILE</a></code></pre></div>
+<p>Il est possible d’utiliser le boucle <strong>TANT QUE</strong> d’une manière alternative :</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="ex">//</span> Declaration</a>
+<a class="sourceLine" id="cb7-2" data-line-number="2"><span class="ex">i</span>: INTEGER <span class="op">&lt;</span>- 20</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4"><span class="ex">REPEATE</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">  <span class="ex">PRINT</span>(<span class="st">&quot;The value of &#39;i&#39; is: &quot;</span> + i)</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">  <span class="ex">i</span> <span class="op">&lt;</span>- i + 1</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="ex">WHILE</span> i <span class="op">&lt;</span> 10</a></code></pre></div>
+<p>La méthode <strong>POUR</strong> permet également de faire des boucles mais avec une syntaxe différentes, plus proche des langage de programmation :</p>
+<pre><code>// Declaration
+i: INTEGER &lt;- 20
+
+FOR i FROM 0 TO 10 [ i &lt;- i + 1 ] 
+  PRINT(&quot;The value of &#39;i&#39; is: &quot; + i)
+
+END FOR</code></pre>
+<blockquote>
+<p>Il est conseiller de s’habituer à la syntaxe de la boucle <strong>POUR</strong>.</p>
+</blockquote>
+<h2 id="les-fonctions">Les fonctions</h2>
+<p>Une <strong>fonction</strong> est un ensemble de d’instructions regroupées en une méthode qu’il est possible de déclencher à tous moment dans notre pseudo-code - dans la mesure ou la déclaration précède l’exécution. Une fonction et un petit algorithme à elle toute seule, il est donc possible d’y déclarer des variables mais elles ne seront disponible hors de la fonction que si elle sont retourner - avec le mot clef <strong>RETURN</strong>.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="ex">FUNCTION</span> add(a: INTEGER, b: INTEGER)</a>
+<a class="sourceLine" id="cb9-2" data-line-number="2">  <span class="ex">result</span>: INTEGER</a>
+<a class="sourceLine" id="cb9-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb9-4" data-line-number="4">  <span class="ex">START</span></a>
+<a class="sourceLine" id="cb9-5" data-line-number="5">    <span class="ex">result</span> <span class="op">&lt;</span>- a + b</a>
+<a class="sourceLine" id="cb9-6" data-line-number="6">    <span class="ex">RETURN</span> result</a>
+<a class="sourceLine" id="cb9-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb9-8" data-line-number="8">  <span class="ex">END</span></a>
+<a class="sourceLine" id="cb9-9" data-line-number="9"><span class="ex">/FUNCTION</span></a></code></pre></div>

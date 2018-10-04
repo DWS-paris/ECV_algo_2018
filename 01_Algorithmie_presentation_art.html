@@ -1,0 +1,261 @@
+<h1 id="algorithmie-présentation-générale">Algorithmie <em>Présentation générale</em></h1>
+<p><img src="img/algoCoverIntro.jpg" /></p>
+<p>Un algorithme est une suite d’instructions (ou commandes) qui permettent d’aboutir à un ou plusieurs résultats. A la manière d’une recette de cuisine, un algorithme prend en compte des informations entrantes (ingrédients, ustensiles, temps de cuisson, …) dans un contexte défini (cuisine familiale, fast-food, grand restaurant, …) pour obtenir un résultat attendu par celui qui l’exécute (quiche lorraine, hamburger, blanc mangé, …). Comme en cuisine il existe un nombre incalculable d’algorithmes différents pour arriver au résultat attendu, la question n’est donc pas de trouver l’algorithme absolu qui puisse résoudre tous les opération mais de définir son cadre d’exécution afin de définir les étapes les plus optimisées pour réduire l’impact de son exécution. Pour reprendre le parallèle avec la cuisine, le chef d’un grand restaurant est capable de réaliser un hamburger d’exception mais si vous n’avez que 20 minutes pour manger il est préférable d’aller dans un Fast-food : le but de l’algorithme n’est donc pas de réaliser un hamburger mais de trouver le meilleur moyen pour manger un hamburger rapidement.</p>
+<h2 id="hamburger-fast-food-ou-hamburger-prestige">Hamburger “Fast-Food” ou hamburger “Prestige” ?</h2>
+<p>Avoir la charge de la création d’un algorithme nécessite d’avoir la capacité de découpé une interrogation complexe en suite de questions simples afin de définir les étapes de résolution d’un problème. Le but de l’algorithme n’est donc pas de certifier à coup sur que la réponse à l’interrogation sera trouver mais de définir les étapes à suivre pour résoudre le problème identifier dans l’interrogation</p>
+<p>De fait, il existe un grand nombre d’algorithme différents pour résoudre les mêmes problèmes, le but est d’estimer lequel choisir selon les contraintes de départ. Nous allons analyser deux algorithmes différents pour identifié celui qui sera la meilleure solution pour répondre à la problématique : <em>“comment manger un hamburger rapidement”</em>.</p>
+<h3 id="tableau-1-réalisation-fast-food">Tableau 1 : réalisation “Fast-Food”</h3>
+<p>Dans le cadre du <em>“Fast-Food”</em> nous considérons que tous les ingrédients sont pré-fabriqués et accessibles sur le plan de travail du cuisinier.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Eléments</th>
+<th>Actions</th>
+<th>Temps (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pain</td>
+<td>Sortir de l’emballage</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Découper en deux</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Salade</td>
+<td>Découper une feuille</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Laver la feuille</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Tomate</td>
+<td>Sortir de l’emballage</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Laver et découper</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td>Oignon</td>
+<td>Sortir de l’emballage</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Eplucher et découper</td>
+<td>45</td>
+</tr>
+<tr class="odd">
+<td>Steak</td>
+<td>Sortir de l’emballage</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Cuire</td>
+<td>180</td>
+</tr>
+<tr class="odd">
+<td>Préparation</td>
+<td>Assembler les ingrédients</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Emballer le burger</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tableau-2-réalisation-prestige">Tableau 2 : réalisation “Prestige”</h3>
+<p>Dans le cadre du <em>“Prestige”</em> nous considérons que tous les ingrédients sont fait par le cuisinier ou accessible depuis le potager associé à la cuisine.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Eléments</th>
+<th>Actions</th>
+<th>Temps (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pain</td>
+<td>Préparer la pâte</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Laisser fermenter</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Façonner</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Cuire</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Découper en deux</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>Salade</td>
+<td>Cueillir dans le potager</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Découper une feuille</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Laver une feuille</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>Tomate</td>
+<td>Cueillir dans le potager</td>
+<td>40</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Laver et découper</td>
+<td>40</td>
+</tr>
+<tr class="odd">
+<td>Oignon</td>
+<td>Cueillir dans le potager</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Eplucher et découper</td>
+<td>45</td>
+</tr>
+<tr class="odd">
+<td>Steak</td>
+<td>Découper des morceaux de boeuf</td>
+<td>180</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Hacher</td>
+<td>180</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>façonner</td>
+<td>180</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Cuire</td>
+<td>180</td>
+</tr>
+<tr class="odd">
+<td>Préparation</td>
+<td>Décorer une assiette</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Assembler les ingrédients</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>Placer le burger sur une assiette</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<h3 id="plus-il-y-a-de-contraintes-plus-cest-facile">Plus il y a de contraintes plus c’est facile</h3>
+<p>La démonstration ci-dessus est flagrante : il faut 365 secondes pour réaliser un hamburger “Fast-Food” quand il en fait 820 pour le hamburger “Prestige”. Le fait de devoir manger vite nous permet facilement de définir l’algorithme le plus efficace mais qu’adviendrait-il si nous changeons le nombre de cuisinier dans l’algorithme “Prestige” ?</p>
+<p>Au-delà du nombre de cuisinier, quelles sont le moyen que nous pouvons mettre en œuvre pour accélérer l’exécution des algorithmes ?</p>
+<ul>
+<li>Les actions doivent-elles être faite les unes après les autres ?</li>
+<li>Est-il possible de changer l’ordre des étapes ?</li>
+<li>Les hamburger sont-ils réalisés à la demande ?</li>
+<li>Qu’est-il possible de préparer en avance ?</li>
+<li>Est-il possible de modifier les quantités, les cuissons ?</li>
+</ul>
+<h1 id="du-cuisinier-au-robot-cuiseur">Du cuisinier au Robot Cuiseur</h1>
+<p>Les étapes que nous avons présentées dans les tableaux 1 et 2 peuvent permettre à un humain de réaliser le hamburger souhaité - avec plus ou moins de dextérité - mais quand est-il si nous souhaitons faire réaliser ces opérations par une machine ? Nous aurions certainement besoin de passer par un langage informatique afin de faire comprendre à la machine les instructions que nous aurons défini dans notre algorithme ce qui nécessiterait des connaissances spécifiques inhérentes à l’utilisation de la machine. Mais si un algorithme est capable de définir le processus pour réaliser une recette de cuisine il est également pour définir celui d’une machine, d’un ordinateur.</p>
+<p><a href=""><img src="./img/turingMachine.jpeg" alt="Turing Machine" /></a></p>
+<p>En 1936 Alan Turing à développé un model permettant de définir le fonctionnement d’appareils mécanique qui à ensuite été appelé “Machine de Turing”. Le principe est de définir les étapes qu’un programme doit suivre pour permettre aux appareils de fonctionner, soit un algorithme permettant de définir le fonctionnement de machine qui à l’époque n’existaient pas encore. Le principe de cette machine est de représenter une personne virtuelle exécutant une procédure bien définie qui permettent de changer le contenu d’un tableau par des symboles spécifique.</p>
+<p>La machine imaginée par Turing comporte un ruban divisé en cases, dans lesquelles elle peut écrire des symboles. La machine ne peut lire qu’une seule case à la fois, de même elle écrit dans une seule case et décale le ruban d’une seule case vers la gauche ou vers la droite. Les symboles sont en nombre fini. Pour que sa machine fonctionne comme une machine à calculer en binaire, Turing envisage le cas particulier où les symboles utilisés sont 0 et 1. C’est une telle machine que nous vous proposons de tester sur l’animation interactive suivante. Vous pourrez y suivre l’exécution de six « programmes ».</p>
+<p><a href=""><img src="./img/turingMachineNew.png" alt="Machine de Turing" /></a></p>
+<h2 id="ajouter-1-à-un-nombre-binaire">Ajouter 1 à un nombre binaire</h2>
+<p>Nous allons tester une des principales actions que Alan Turing à voulu faire réaliser par une machine : ajouter 1 à un nombre binaire.</p>
+<p><a href="http://inriamecsci.github.io/#!/grains/machine-turing"><img src="./img/algoTuring.jpg" alt="Turing Machine" /></a></p>
+<blockquote>
+<p>Cliquer sur l’image pour accéder au simulateur</p>
+</blockquote>
+<p>Tester le simulateur vous permet de comprendre la suite logique de l’algorithme défini par Alan Turing, les étapes à suivre et de valider la stabilité de la suite logique qu’il contient. Il faut néanmoins préciser certains points pour permettre de comprendre le résultat de l’addition.</p>
+<p>Pour ajouter 1 à un nombre binaire, nous utilisons la table d’addition suivante :</p>
+<h3 id="table-daddition">Table d’addition</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Addition</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0 + 0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0 + 1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1 + 0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1 + 1</td>
+<td>10 (on pose 0, et on retient 1)</td>
+</tr>
+</tbody>
+</table>
+<p>Cette table d’addition nous permet d’effectuer de tête des additions en binaire simples mais pour des calcules plus complexes il faut suivre une logique de lecture gauche/droite en respectant le principe d’inversion des valeur de 1 à 0 à 1.</p>
+<h3 id="chiffre-se-termine-par-0-1001010-1-1001011">Chiffre se termine par 0 <br>1001010 + 1 = 1001011</h3>
+<p>On parcourt le nombre de gauche à droite, et lorsqu’on arrive à la fin, si on trouve un 0, on le remplace par un 1 et on passe à l’état final.</p>
+<h3 id="chiffre-se-termine-par-1-1001011-1-1001100">Chiffre se termine par 1 <br>1001011 + 1 = 1001100</h3>
+<p>Après avoir parcouru le nombre de gauche à droite, on revient de droite à gauche, tant qu’on trouve un 1, on le remplace par un 0, lorsqu’on trouve la première occurrence de 0, on la remplace par 1 puis on passe à l’état final.</p>
+<h3 id="chiffre-uniquement-composé-de-1-1111111-1-10000000">Chiffre uniquement composé de 1 <br> 1111111 + 1 = 10000000</h3>
+<p>Après avoir parcouru le nombre de gauche à droite, on revient de droite à gauche, tant qu’on trouve un 1, on le remplace par un 0 et lorsqu’on arrive au dernier 1, on insère un 1 dans la case vide à gauche et on passe à l’état final.</p>
+<p>La table d’addition et les calcules ci-dessus n’ont pas pour simple but d’explorer l’arithmétique binaire - ou plus simplement le calcul binaire - mais ils permettent de faire le lien avec la ou les machines qui exécuterons nos algorithmes. Car les deux chiffres 0 et 1 sont traduit par la machine en la tension ou passage d’un courant électrique. Par exemple, le 0 peut être représenté par l’état éteint (tension ou courant nul) et 1 par l’état allumé (tension qui existe ou courant qui passe).</p>
+<h2 id="de-la-logique-à-laction">De la logique à l’action</h2>
+<p>Une fois la logique comprise, comment pouvons nous mettre en place une suite d’actions à réaliser pour qu’une machine soit capable d’effectuer nos calcules binaires ? En suivant la logique de la machine de Turing, nous devons envoyer une suite binaire dans une machine et lui demander d’y ajouter 1, l’algorithme installé sur la machine va alors lire chacun des chiffres de gauche à droite, les réécrire et selon le dernier chiffre lu, passer à celui de droite ou revenir vers la gauche pour finalement terminer l’exécution de l’algorithme lorsque le résultat est trouvé.</p>
+<h3 id="table-daction-pour-ajouter-1-à-un-nombre-binaire">Table d’action pour ajouter 1 à un nombre binaire</h3>
+<p>La machine de Turing utilise donc pour notre calcule la table d’actions suivante :</p>
+<p><a href=""><img src="./img/table_add_1.png" alt="Table d’action" /></a></p>
+<p>Quel que soit le nombre envoyé dans la machine, cette dernière utilise la table d’action et agit de la manière suivante :</p>
+<ul>
+<li>Si elle est à l’état 1 et trouve une case vide, elle n’écrit rien, décale sa tête de lecture d’une case à gauche et passe à l’état 2</li>
+<li>Si elle est à l’état 2 et lit un 0, elle écrit 0, décale sa tête de lecture d’une case à gauche et reste à l’état 2</li>
+<li>Si elle est à l’état 2 et lit un 1, elle écrit 1, décale sa tête de lecture d’une case à gauche et reste à l’état 2</li>
+<li>Si elle est à l’état 2 et trouve une case vide, elle n’écrit rien, décale sa tête de lecture d’une case à droite et passe à l’état 3</li>
+<li>Si elle est à l’état 3 et lit un 1, elle écrit 0, décale sa tête de lecture d’une case à droite et reste à l’état 3</li>
+<li>Si elle est à l’état 3 et lit un 0, elle écrit 1, décale sa tête de lecture d’une case à droite et passe à l’état final.</li>
+<li>Si elle est à l’état 3 et trouve une case vide, elle écrit 1, décale sa tête de lecture d’une case à droite et passe à l’état final</li>
+</ul>

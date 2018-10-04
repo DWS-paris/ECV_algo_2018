@@ -1,0 +1,91 @@
+<h1 id="compléxité-algorithmique-définition-et-calcul">Compléxité algorithmique <em>Définition et calcul</em></h1>
+<p><img src="img/algoCoverComplex.jpg" /></p>
+<p>L’analyse de la complexité d’un algorithme consiste en l’étude formelle de la quantité de ressources nécessaire à l’exécution de cet algorithme, celle-ci ne doit pas être mal comprise : lorsque l’on par de complexité c’est celle que la machine qui exécutera l’algorithme devra passer et pas la personne qui rédige l’algorithme.</p>
+<p>Quand les scientifiques ont voulu énoncer formellement et rigoureusement ce qu’est l’efficacité d’un algorithme ou au contraire sa complexité, ils se sont rendu compte que la comparaison des algorithmes entre eux était nécessaire et que les outils pour le faire à l’époque1 étaient primitifs. Dans la préhistoire de l’informatique (les années 1950), la mesure publiée quand elle existait, était souvent dépendante de facteurs non-relatif à l’algorithme à traiter mais à la machine qui l’exécutera.</p>
+<p>L’approche la plus classique utiliser pour calculer la complexité d’un algorithme est de calculer le temps de calcul dans le pire des cas nécessaire pour l’exécution de l’algorithme.</p>
+<h2 id="calculer-la-complexité-dun-algorithme">Calculer la complexité d’un algorithme</h2>
+<p>Il est possible d’écrire différents algorithmes pour atteindre un même résultat, par exemple calculer le fait qu’un utilisateur soit majeur ou pas, mais comment savoir lequel sera le plus efficace cotés machine et qui demandera le moins de ressources matérielles ? Pour le savoir nous allons analyser un algorithme simple dont voici la définition :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">FUNCTION</span> check_user_age( a: INTEGER, b: INTEGER )</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">  <span class="ex">START</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">    <span class="ex">IF</span> age <span class="op">&gt;</span> 18 THE</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">      <span class="ex">PRINT</span>(<span class="st">&quot;User is major&quot;</span>)</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">    <span class="ex">ELSE</span></a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">      <span class="ex">PRINT</span>(<span class="st">&quot;User is not major&quot;</span>)</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb1-9" data-line-number="9">    <span class="ex">END</span> IF</a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">  <span class="ex">END</span></a>
+<a class="sourceLine" id="cb1-11" data-line-number="11"><span class="ex">/FUNCTION</span></a></code></pre></div>
+<p>L’analyse de cette algorithme nous permet de faire quelques constats :</p>
+<ul>
+<li>Le code est lu de haut en bas</li>
+<li>Pour répondre à la condition IF <em>age</em> doit être supérieur à 18</li>
+<li>La condition ELSE est déclencher uniquement si la condition IF n’est pas remplie</li>
+</ul>
+<p>Nous pouvons donc considérer que pour que l’algorithme s’exécute le plus rapidement il faut que le paramètre <em>age</em> soit supérieur à 18 ce que nous nommerons lexécution <strong>idéale</strong> de l’agorithme. Pour en calculer sa complexité nous allons donc le pire des scénarios : que ce passe-t-il si <em>age</em> est égal à 10 ?</p>
+<p>Pour calculer la complexité d’un algorithme il faut prendre en compte le pire des scénarios et associer un point pour chaque opération élémentaire :</p>
+<ul>
+<li>affectation</li>
+<li>calcul</li>
+<li>comparaison</li>
+</ul>
+<p>Passons à présent au calcul de la complexité de l’algorithme suivant :</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">FUNCTION</span> check_number()</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="ex">//</span> Declare</a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="ex">a</span>: INTEGER, </a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="ex">b</span>: INTEGER</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="ex">START</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">    <span class="ex">a</span> <span class="op">&lt;</span>- 14</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">    <span class="ex">PRINT</span>(<span class="st">&quot;Number a is &quot;</span>, a)</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">    <span class="ex">b</span> <span class="op">&lt;</span>- a - 5</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">    <span class="ex">PRINT</span>(<span class="st">&quot;Number b is &quot;</span>, b)</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">  <span class="ex">END</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="ex">/FUNCTION</span></a></code></pre></div>
+<h3 id="calcule-de-la-complexité-dun-algorithme-simple">Calcule de la complexité d’un algorithme simple</h3>
+<p>Nous commençons par calculer chaque opération élémentaires</p>
+<ul>
+<li>a &lt;- 14 = 1</li>
+<li>b &lt;- a - 5 = 1</li>
+<li>a - 5 = 1</li>
+<li><strong>Total</strong> = 3</li>
+</ul>
+<p>La complexité de l’algorithme est donc de <strong>3</strong> sur une échelle de temps, c’est à dire que qu’à chaque fois qu’il est répéter il faudra multiplier par 3 ne temps d’exécution. La syntaxe pour d’écrire la complexité de cette algorithme est :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="ex">T</span>(n) = <span class="ex">3</span></a></code></pre></div>
+<h2 id="calcule-de-la-complexité-dun-algorithme-compliqué">Calcule de la complexité d’un algorithme compliqué</h2>
+<p>Passons à présent au calcule de la complexité d’un algorithme plus compliqué :</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">FUNCTION</span> total(n: NUMBER)<span class="bu">:</span> NUMBER</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="ex">//</span> Declare</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="ex">1</span>: INTEGER, </a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="ex">response</span>: INTEGER</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">  <span class="ex">START</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">    <span class="ex">response</span> <span class="op">&lt;</span>- 0</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">    <span class="ex">FOR</span> i FROM 0 TO n [ i <span class="op">&lt;</span>- i + 1 ] </a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">      <span class="ex">response</span> <span class="op">&lt;</span>- response + i</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">    <span class="ex">END</span> FOR</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14">    <span class="ex">RETURN</span> response</a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16">  <span class="ex">END</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="ex">/FUNCTION</span></a></code></pre></div>
+<p>Commençons par calculer les opérations élémentaires :</p>
+<ul>
+<li>response &lt;- 0 = 1</li>
+<li><strong>Total</strong> = 1</li>
+</ul>
+<p>Nous retenons le résultat et passons au calcule de la boucle</p>
+<ul>
+<li>i FROM 0 = 1</li>
+<li>0 TO n = 1</li>
+<li>i + 1 = 1</li>
+<li>response &lt;- response + i = 1</li>
+<li>response + i = 1</li>
+<li><strong>Total</strong> = 5 x n</li>
+</ul>
+<p>La complexité de l’algorithme est donc de <strong>5n + 1</strong> sur une échelle de temps dont la syntaxe pour la d’écrire est :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">T</span>(n) = <span class="ex">5n</span> + 1</a></code></pre></div>

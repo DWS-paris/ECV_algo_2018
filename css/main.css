@@ -1,0 +1,357 @@
+/* 
+Reset
+*/
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html{
+        font-size: 62.5%;
+    }
+
+    body{
+        font-family: sans-serif;
+        font-weight: 100;
+        -webkit-font-smoothing : antialiased;
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+
+    ul{
+        margin: 2rem 0 2rem 2rem;
+    }
+
+    p{
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+    }
+
+    hr{
+        clear: both;
+        margin: 2rem auto;
+    }
+
+    img{
+        max-width: 100%;
+    }
+
+    a:not(.sourceLine){
+        color: black;
+        font-weight: 400;
+        text-decoration: none;
+        border-bottom: .1rem dotted #999
+    }
+/**/
+
+/* 
+Titles
+*/
+    h1, h2, h3, h4{
+        line-height: 1;
+    }
+
+    h1{
+        text-transform: uppercase;
+        font-weight: 900;
+        padding: 2rem 0;
+    }
+
+    h1:first-of-type {
+        position: relative;
+        z-index: 3;
+        text-align: center;
+        max-width: 60rem;
+        margin: 10rem auto 30rem auto;
+        background: rgba(255, 255, 255, .7);
+        padding: 4rem;
+    }
+
+    h1:first-of-type::after {
+        content: "Julien Noyer © 2018-2019";
+        display: block;
+        font-size: 1.3rem;
+        color: white;
+        position: absolute;
+        top: calc(100% + 1rem);
+        left: 0;
+        width: 100%;
+        text-shadow: 0 0 1rem rgba(0, 0, 0, .5);
+    }
+
+    h1 + p{
+        margin-top: 0rem;
+    }
+
+    h1 em{
+        margin-top: .5rem;
+        font-weight: 100;
+        font-size: 2rem;
+        display: block;
+        font-style: normal;
+        margin-top: .5rem;
+    }
+
+    h1:not(:first-of-type) em{
+        border-left: 2rem solid black;
+        padding-left: .5rem;
+    }
+
+    h1:not(:first-of-type){
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h2{
+        font-weight: 100;
+        text-transform: uppercase;
+        margin: 5rem auto 2rem auto
+    }
+
+    h2::after, h2::before, h1:not(:first-of-type)::before{
+        content: '';
+        display: block;
+        background-color: black;
+    }
+
+    h2::before{
+        width: 2rem;
+        height: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    h2::after, h1:not(:first-of-type)::before{
+        margin-top: 2rem;
+        width: 10rem;
+        height: .1rem;
+    }
+
+    h1:not(:first-of-type)::before{
+        margin-bottom: 3rem;
+    }
+
+    h3 {
+        margin-top: 6rem;
+        margin-bottom: 3rem;
+    }
+
+    hr + h3 {
+        background: black;
+        display: inline-block;
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        color: white;
+        margin-top: 0;
+    }
+/**/
+
+/* 
+Images
+*/
+    h1:first-of-type + p img{
+        position: absolute;
+        top: 4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 110rem;
+        z-index: 2;
+    }
+/**/
+
+/* 
+Table
+*/
+    table {
+        width: 100%;
+    }
+    
+    thead {
+        background: #666;
+        color: white;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        text-align: left;
+    }
+
+    th {
+        padding: 1rem;
+    }
+
+    td {
+        border-bottom: .1rem dotted #666;
+    }
+
+    td:first-of-type {
+        font-weight: 500;
+    }
+/**/
+
+/* 
+Blocks
+*/
+    div.sourceCode {
+        background: #d6d6d6;
+        line-height: 1.5;
+        margin: 0 auto 4rem auto;
+        font-family: serif;
+        font-size: 2.5rem;
+        border-bottom-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        padding: 3rem;
+    }
+
+    blockquote {
+        border-left: .5rem solid #d6d6d6;
+        padding-left: 1rem;
+    }
+/**/
+
+
+/* 
+Scree configuration
+*/
+    @media screen{
+        /*
+        Title
+        */
+            h1:first-of-type {
+                margin: 30rem auto 35rem auto;
+            }
+
+            h2{
+                font-size: 2.5rem; 
+                margin: 20rem auto 2rem auto
+            }
+
+            h1:not(:first-of-type){
+                margin-top: 20rem;
+            }
+        /**/
+
+        /* 
+        Header
+        */
+            header, footer {
+                position: fixed;
+                font-size: 1.2rem;
+                font-weight: 400;
+                text-transform: uppercase;
+                width: 100%;
+                padding: 1rem 0;
+                z-index: 10;
+                background-color: white;
+            }
+
+            header{
+                top: 0;
+                border-bottom: .1rem dotted #d6d6d6
+            }
+
+            footer{
+                bottom: 0;
+                border-top: .1rem dotted #d6d6d6
+            }
+
+            header p, footer p {
+                margin: 0 0 .2rem 0;
+            }
+
+            header p em, footer p {
+                font-style: normal;
+                text-transform: none;
+                opacity: .5;
+                margin-left: 1rem;
+            }
+
+            header button {
+                font-size: 1rem;
+                text-transform: uppercase;
+                background: transparent;
+                border: none;
+                font-weight: 900;
+                border: .1rem dotted #999;
+                padding: .5rem .7rem;
+                margin-right: .5rem;
+            }
+        /**/
+
+        /* 
+        Blocks
+        */
+            main, header section, footer p{
+                max-width: 90rem;
+                margin: auto;
+            }
+
+            main{
+                padding-bottom: 5rem;
+            }            
+        /**/
+
+        /* 
+        Images
+        */
+            h1 + p img, figure img{
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            figure img {
+                border-top-left-radius: 2rem;
+            }
+
+            figcaption {
+                font-size: 1.1rem;
+                text-transform: uppercase;
+                border: .1rem solid #eee;
+                padding: 1rem;
+                margin-top: -2rem;
+                margin-bottom: 4rem;
+                border-bottom-right-radius: 2rem;
+            }
+
+            p + figure{
+                margin-top: 2rem;
+                clear: left;
+            }
+        /**/
+    }
+/**/
+
+
+/* 
+Printer configuration
+*/
+    @page {
+        size: A4;
+        margin-top: 3cm;
+        margin-bottom: 3cm;
+        margin-left: 1.5cm;
+        margin-right: 1.5cm;
+    }
+
+    @page :first {
+        margin-top: 1.5cm;
+    }
+
+    @media print{
+
+        html{
+            font-size: 55%;
+        }
+
+        body{
+            padding: 15mm;
+        }
+
+        header{
+            display: none;
+        }
+
+        img{
+            width: 100%;
+        }
+    }
+/**/

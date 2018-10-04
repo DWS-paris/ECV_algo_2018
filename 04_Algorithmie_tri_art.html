@@ -1,0 +1,323 @@
+<h1 id="algorithme-de-trie-organiser-et-trier-des-données">Algorithme de trie <em>Organiser et trier des données</em></h1>
+<p><img src="img/algoCoverTri.jpg" /></p>
+<p>Un <strong>algorithme de tri</strong> en informatique permet d’organiser une collection de données selon un ordre déterminé au préalable comme par <em>ordonner des entiers du plus grand au plus petit</em>. <strong>Les algorithmes de tri</strong> sont utilisés dans de très nombreuses situations et ils sont en particulier utiles à de nombreux algorithmes plus complexes comme certains <em>algorithmes de recherche</em> ou dans des <em>réseaux de neurones</em> informatiques. Ils peuvent également servir pour mettre en forme des données afin de les rendre plus lisibles pour l’utilisateur.</p>
+<h1 id="le-tri-a-bulle">Le tri a bulle</h1>
+<figure>
+<img src="img/bubbleSort.jpg" alt="Tri à bulle : https://www.youtube.com/watch?v=lyZQPjUT5B4" /><figcaption>Tri à bulle : <a href="https://www.youtube.com/watch?v=lyZQPjUT5B4" class="uri">https://www.youtube.com/watch?v=lyZQPjUT5B4</a></figcaption>
+</figure>
+<p><strong>Le tri à bulle</strong> consiste à parcourir le tableau en permutant toutes les paire d’éléments consécutifs non ordonnés. Après le premier parcours, le plus grand élément se retrouve dans la deuxième case du tableau, il reste donc à appliquer la même procédure sur les autres données en paçant les plus grandes données vers la droite.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="ex">Tableau</span> au début [12, 0, 7, 29, 3]</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">[<span class="ex">0</span>, 12, 7, 29, 3]</a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">[<span class="ex">0</span>, 7, 12, 29, 3]</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">[<span class="ex">0</span>, 7, 12, 3, 29]</a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">[<span class="ex">0</span>, 7, 3, 12, 29]</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb1-8" data-line-number="8"><span class="ex">Tableau</span> à la fin [0, 3, 7, 12, 29]</a></code></pre></div>
+<p>Cette algorithme de tri est très simple à comprendre, on peut voir son fonctionnement qui permet de faire “descendre” le plus petit chiffre vers la gauche. Nous allons voir à présent comment écrire cette algorithme en pseudo code.</p>
+<h2 id="pseudo-code">Pseudo-code</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="ex">ALGO</span> bubbleSorting</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">  <span class="ex">data</span>: ARRAY<span class="op">&lt;</span>NUMBER<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">  <span class="ex">dataSize</span>: NUMBER</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4">  <span class="ex">sorted</span>: BOOLEAN</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5">  <span class="ex">i</span>: NUMBER</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="ex">tmp</span>: NUMBER</a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="ex">START</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9">  <span class="ex">FUNCTION</span> sort(data)</a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">      <span class="ex">dataSize</span> <span class="op">&lt;</span>- data.LENGTH</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11">      <span class="ex">sorted</span> <span class="op">&lt;</span>- False</a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">  <span class="ex">START</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">    <span class="ex">WHILE</span> sorted == False</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">      <span class="ex">sorted</span> <span class="op">&lt;</span>- True</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb2-17" data-line-number="17">      <span class="ex">FOR</span> i FROM 0 TO dataSize [ i <span class="op">&lt;</span>- i + 1 ] </a>
+<a class="sourceLine" id="cb2-18" data-line-number="18">        <span class="ex">IF</span> data[i] <span class="op">&gt;</span> data[i + 1] THEN</a>
+<a class="sourceLine" id="cb2-19" data-line-number="19">          <span class="ex">tmp</span> <span class="op">&lt;</span>- data[1 +1]</a>
+<a class="sourceLine" id="cb2-20" data-line-number="20">          <span class="ex">data</span>[i + 1] <span class="op">&lt;</span>- data[i]</a>
+<a class="sourceLine" id="cb2-21" data-line-number="21">          <span class="ex">data</span>[i] <span class="op">&lt;</span>- tmp</a>
+<a class="sourceLine" id="cb2-22" data-line-number="22">          <span class="ex">sorted</span> <span class="op">&lt;</span>- False</a>
+<a class="sourceLine" id="cb2-23" data-line-number="23">        <span class="ex">END</span> IF</a>
+<a class="sourceLine" id="cb2-24" data-line-number="24">      <span class="ex">END</span> FOR</a>
+<a class="sourceLine" id="cb2-25" data-line-number="25"></a>
+<a class="sourceLine" id="cb2-26" data-line-number="26">      <span class="ex">dataSize</span> <span class="op">&lt;</span>- dataSize - 1</a>
+<a class="sourceLine" id="cb2-27" data-line-number="27">    <span class="ex">END</span> WHILE</a>
+<a class="sourceLine" id="cb2-28" data-line-number="28">  <span class="ex">END</span> FUNCTION</a>
+<a class="sourceLine" id="cb2-29" data-line-number="29"></a>
+<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="ex">END</span> ALGO</a></code></pre></div>
+<hr />
+<ul>
+<li>Estimez-vous cette algorithme rapide ? Très rapide ?</li>
+<li>Cette algorithme est-il efficace sur des grandes collections de données ?</li>
+<li>Pourquoi prendre la dance pour illustrer un algorithme ?</li>
+</ul>
+<hr />
+<h2 id="complexité">Complexité</h2>
+<p>Dans ce calcule nous recherchons une valeur pour le traitement de l’algorithme de <strong>tri à bulle</strong> en concidérant qu’une action élémentaire vaut 1.</p>
+<p>Début de la function :</p>
+<ul>
+<li>dataSize &lt;- data.LENGTH = 1</li>
+<li>sorted &lt;- False = 1</li>
+<li>sorted &lt;- True = 1</li>
+<li><strong>Total</strong>: 3</li>
+</ul>
+<p>Boucle :</p>
+<ul>
+<li>i FROM 0 TO dataSize = 2</li>
+<li>i + 1 = 1</li>
+<li>data[i] &gt; data[i + 1] = 2</li>
+<li>tmp &lt;- data[1 +1] = 2</li>
+<li>data[i + 1] &lt;- data[i] = 2</li>
+<li>data[i] &lt;- tmp = 1</li>
+<li>sorted &lt;- False = 1</li>
+<li>dataSize &lt;- dataSize - 1 = 2</li>
+<li><strong>Total</strong> = 13 x dataSize</li>
+</ul>
+<p>Nous pouvons à présent calculer une valeur pour le traitement du tableau suivnat :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" data-line-number="1">[<span class="ex">6</span>, 1, 12, 0, 25, 7, 29, 3, 45]</a></code></pre></div>
+<ul>
+<li>Formule : <strong>Val(n) = 13n + 3</strong></li>
+<li>Résultat : 81 x 18 + 3 = <strong>120</strong></li>
+</ul>
+<h2 id="le-tri-par-selection">Le tri par selection</h2>
+<figure>
+<img src="img/selectionSort.jpg" alt="Tri à bulle : https://www.youtube.com/watch?v=Ns4TPTC8whw" /><figcaption>Tri à bulle : <a href="https://www.youtube.com/watch?v=Ns4TPTC8whw" class="uri">https://www.youtube.com/watch?v=Ns4TPTC8whw</a></figcaption>
+</figure>
+<p><strong>Le tri par sélection</strong> consiste à trouver dans le tableau le numéro de l’élément le plus petit, c’est-à-dire l’entier minminimum. Une fois ce numéro trouvé, les éléments sont échangés, cet échange nécessite, puis la même procédure est appliquée sur la suite d’éléments.</p>
+<h2 id="pseudo-code-1">Pseudo-code</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="ex">ALGO</span> selectSorting</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="ex">data</span>: ARRAY<span class="op">&lt;</span>NUMBER<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="ex">dataSize</span>: NUMBER</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="ex">sorted</span>: BOOLEAN</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="ex">i</span>: NUMBER</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">  <span class="ex">j</span>: NUMBER</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7">  <span class="ex">tmp</span>: NUMBER</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="ex">START</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">  <span class="ex">FUNCTION</span> sort(data)</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">      <span class="ex">dataSize</span> <span class="op">&lt;</span>- data.LENGTH</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12">      <span class="ex">sorted</span> <span class="op">&lt;</span>- False</a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14">    <span class="ex">START</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15">      <span class="ex">FOR</span> i FROM 0 TO dataSize [ i <span class="op">&lt;</span>- i + 1 ] </a>
+<a class="sourceLine" id="cb4-16" data-line-number="16">        <span class="ex">FOR</span> j FROM i + 1 TO dataSize [ j <span class="op">&lt;</span>- j + 1 ] </a>
+<a class="sourceLine" id="cb4-17" data-line-number="17">          <span class="ex">IF</span> data[j] <span class="op">&lt;</span> data[i] THEN</a>
+<a class="sourceLine" id="cb4-18" data-line-number="18">            <span class="ex">tmp</span> <span class="op">&lt;</span>- data[i]</a>
+<a class="sourceLine" id="cb4-19" data-line-number="19">            <span class="ex">data</span>[i] <span class="op">&lt;</span>- data[j]</a>
+<a class="sourceLine" id="cb4-20" data-line-number="20">            <span class="ex">data</span>[j] <span class="op">&lt;</span>- tmp</a>
+<a class="sourceLine" id="cb4-21" data-line-number="21">          <span class="ex">END</span> IF</a>
+<a class="sourceLine" id="cb4-22" data-line-number="22">        <span class="ex">END</span> FOR</a>
+<a class="sourceLine" id="cb4-23" data-line-number="23">      <span class="ex">END</span> FOR</a>
+<a class="sourceLine" id="cb4-24" data-line-number="24">    <span class="ex">END</span> FUNCTION</a>
+<a class="sourceLine" id="cb4-25" data-line-number="25"><span class="ex">END</span> ALGO</a></code></pre></div>
+<hr />
+<ul>
+<li>Cette algorithme vous semble-t-til plus efficace que le premier ?</li>
+<li>Quelle est votre niveau de compréhention sur le pseudo-code ci-dessus ?</li>
+</ul>
+<hr />
+<h2 id="complexité-1">Complexité</h2>
+<p>Dans ce calcule nous recherchons une valeur pour le traitement de l’algorithme de <strong>tri par sélection</strong> en concidérant qu’une action élémentaire vaut 1.</p>
+<p>Début de la function :</p>
+<ul>
+<li>dataSize &lt;- data.LENGTH = 1</li>
+<li>sorted &lt;- False = 1</li>
+<li><strong>Total</strong>: 3</li>
+</ul>
+<p>Boucle i :</p>
+<ul>
+<li>i FROM 0 TO dataSize = 2</li>
+<li>i + 1 = 1</li>
+<li><strong>Total</strong> = 2 x dataSize</li>
+</ul>
+<p>Boucle j :</p>
+<ul>
+<li>j FROM i + 1 TO dataSize = 3</li>
+<li>j + 1 = 1</li>
+<li>data[j] &lt; data[i] = 1</li>
+<li>tmp &lt;- data[i] = 1</li>
+<li>data[i] &lt;- data[j] = 1</li>
+<li>data[j] &lt;- tmp = 1</li>
+<li><strong>Total</strong> = 8 x dataSize</li>
+</ul>
+<p>Nous pouvons à présent calculer une valeur pour traitement du tableau suivnat :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1">[<span class="ex">6</span>, 1, 12, 0, 25, 7, 29, 3, 45]</a></code></pre></div>
+<ul>
+<li>Formule : <strong>Val(n) = 8n x 2n + 3</strong></li>
+<li>Résultat : 81 x 18 + 3 = <strong>1 461</strong></li>
+</ul>
+<h2 id="le-tri-par-insertion">Le tri par insertion</h2>
+<figure>
+<img src="img/insertSort.jpg" alt="Tri à bulle : https://www.youtube.com/watch?v=ROalU379l3U" /><figcaption>Tri à bulle : <a href="https://www.youtube.com/watch?v=ROalU379l3U" class="uri">https://www.youtube.com/watch?v=ROalU379l3U</a></figcaption>
+</figure>
+<p><strong>Le tri par insertion</strong> est très différent de la méthode de tri par sélection et s’apparente à celle utilisée pour trier ses cartes dans un jeu : on prend une carte, puis la deuxième que l’on place en fonction de la première, ensuite la troisième que l’on insère à sa place en fonction des deux premières et ainsi de suite. Le principe général est donc de considérer que les premières cartes sont triées et de placer les suivantes à leur place parmis les carte déjà tirées.</p>
+<h2 id="pseudo-code-2">Pseudo-code</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">ALGO</span> insertSorting</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="ex">data</span>: ARRAY<span class="op">&lt;</span>NUMBER<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">  <span class="ex">dataSize</span>: NUMBER</a>
+<a class="sourceLine" id="cb6-4" data-line-number="4">  <span class="ex">i</span>: NUMBER</a>
+<a class="sourceLine" id="cb6-5" data-line-number="5">  <span class="ex">j</span>: NUMBER</a>
+<a class="sourceLine" id="cb6-6" data-line-number="6">  <span class="ex">tmp</span>: NUMBER</a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="ex">START</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9">  <span class="ex">FUNCTION</span> sort(data)</a>
+<a class="sourceLine" id="cb6-10" data-line-number="10">      <span class="ex">dataSize</span> <span class="op">&lt;</span>- data.LENGTH</a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12">    <span class="ex">START</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13">      <span class="ex">FOR</span> i FROM 0 TO dataSize [ i <span class="op">&lt;</span>- i + 1 ] </a>
+<a class="sourceLine" id="cb6-14" data-line-number="14">        <span class="ex">tmp</span> <span class="op">&lt;</span>- data[i]</a>
+<a class="sourceLine" id="cb6-15" data-line-number="15">        <span class="ex">j</span> <span class="op">&lt;</span>- i - 1</a>
+<a class="sourceLine" id="cb6-16" data-line-number="16"></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17">        <span class="ex">WHILE</span> temp <span class="op">&lt;</span> data[j] <span class="kw">&amp;&amp;</span> <span class="ex">j</span> <span class="op">&gt;</span>= 0 THEN</a>
+<a class="sourceLine" id="cb6-18" data-line-number="18">          <span class="ex">data</span>[i] <span class="op">&lt;</span>- data[j + 1]</a>
+<a class="sourceLine" id="cb6-19" data-line-number="19">          <span class="ex">j</span> <span class="op">&lt;</span>- j - 1</a>
+<a class="sourceLine" id="cb6-20" data-line-number="20">        <span class="ex">END</span> WHILE</a>
+<a class="sourceLine" id="cb6-21" data-line-number="21"></a>
+<a class="sourceLine" id="cb6-22" data-line-number="22">        <span class="ex">data</span>[j + 1] <span class="op">&lt;</span>- tmp</a>
+<a class="sourceLine" id="cb6-23" data-line-number="23">      <span class="ex">END</span> FOR</a>
+<a class="sourceLine" id="cb6-24" data-line-number="24">    <span class="ex">END</span> FUNCTION</a>
+<a class="sourceLine" id="cb6-25" data-line-number="25"><span class="ex">END</span> ALGO</a></code></pre></div>
+<hr />
+<ul>
+<li>Cette algorithme vous semble-t-til être le plus efficace ?</li>
+<li>Serait-il possible d’associer cette algorithme à un des deux autres ?</li>
+</ul>
+<hr />
+<h2 id="complexité-2">Complexité</h2>
+<p>Dans ce calcule nous recherchons une valeur pour le traitement de l’algorithme de <strong>tri par insertion</strong> en concidérant qu’une action élémentaire vaut 1.</p>
+<p>Début de la function :</p>
+<ul>
+<li>dataSize &lt;- data.LENGTH = 1</li>
+<li><strong>Total</strong>: 1</li>
+</ul>
+<p>Boucle :</p>
+<ul>
+<li>i FROM 0 TO dataSize = 2</li>
+<li>i + 1 = 1</li>
+<li>tmp &lt;- data[i] = 1</li>
+<li>j &lt;- i - 1 = 1</li>
+<li>data[j + 1] &lt;- tmp = 1</li>
+<li><strong>Total</strong> = 8 x dataSize</li>
+</ul>
+<p>While :</p>
+<ul>
+<li>temp &lt; data[j] &amp;&amp; j &gt;= 0 = 3</li>
+<li>data[i] &lt;- data[j + 1] = 2</li>
+<li>j &lt;- j - 1 = 2</li>
+<li><strong>Total</strong> = 7 x dataSize</li>
+</ul>
+<p>Nous pouvons à présent calculer une valeur pour traitement du tableau suivnat :</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1">[<span class="ex">6</span>, 1, 12, 0, 25, 7, 29, 3, 45]</a></code></pre></div>
+<ul>
+<li>Formule : <strong>Val(n) = 7n x 8n + 1</strong></li>
+<li>Résultat : 63 x 81 + 1 = <strong>5 014</strong></li>
+</ul>
+<hr />
+<h2 id="le-tri-en-fusiuon">Le tri en fusiuon</h2>
+<figure>
+<img src="img/fusionSort.jpg" alt="Tri fusion : https://www.youtube.com/watch?v=XaqR3G_NVoo" /><figcaption>Tri fusion : <a href="https://www.youtube.com/watch?v=XaqR3G_NVoo" class="uri">https://www.youtube.com/watch?v=XaqR3G_NVoo</a></figcaption>
+</figure>
+<p><strong>Le tri en fusion</strong> applique le principe de « diviser pour régner ». En effet, étant données deux collection de données triées et la longueur des collections, il est très facile d’obtenir une troisième collection de données triés de longueur égale à la taille des deux premières collections, par « interclassement » ou fusion des deux précédentes collections.</p>
+<h2 id="pseudo-code-3">Pseudo-code</h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="ex">ALGO</span> insertSorting</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">  <span class="ex">data</span>: ARRAY<span class="op">&lt;</span>NUMBER<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">  <span class="ex">dataSize</span>: NUMBER</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4">  <span class="ex">rightData</span>: ARRAY<span class="op">&lt;</span>NUMBER<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5">  <span class="ex">leftData</span>: ARRAY<span class="op">&lt;</span>NUMBER<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6">  <span class="ex">fusionedArray</span>: ARRAY<span class="op">&lt;</span>NUMBER<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7">  <span class="ex">result</span>: ARRAY<span class="op">&lt;</span>NUMBER<span class="op">&gt;</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8">  <span class="ex">middle</span>: NUMBER</a>
+<a class="sourceLine" id="cb8-9" data-line-number="9">  <span class="ex">sorted</span>: NUMBER</a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="ex">START</span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12">  <span class="ex">FUNCTION</span> bubbleSort(data)</a>
+<a class="sourceLine" id="cb8-13" data-line-number="13">      <span class="ex">dataSize</span> <span class="op">&lt;</span>- data.LENGTH</a>
+<a class="sourceLine" id="cb8-14" data-line-number="14">      <span class="ex">sorted</span> <span class="op">&lt;</span>- False</a>
+<a class="sourceLine" id="cb8-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb8-16" data-line-number="16">  <span class="ex">START</span></a>
+<a class="sourceLine" id="cb8-17" data-line-number="17">    <span class="ex">WHILE</span> sorted == False</a>
+<a class="sourceLine" id="cb8-18" data-line-number="18">      <span class="ex">sorted</span> <span class="op">&lt;</span>- True</a>
+<a class="sourceLine" id="cb8-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb8-20" data-line-number="20">      <span class="ex">FOR</span> i FROM 0 TO dataSize [ i <span class="op">&lt;</span>- i + 1 ] </a>
+<a class="sourceLine" id="cb8-21" data-line-number="21">        <span class="ex">IF</span> data[i] <span class="op">&gt;</span> data[i + 1] THEN</a>
+<a class="sourceLine" id="cb8-22" data-line-number="22">          <span class="ex">tmp</span> <span class="op">&lt;</span>- data[1 +1]</a>
+<a class="sourceLine" id="cb8-23" data-line-number="23">          <span class="ex">data</span>[i + 1] <span class="op">&lt;</span>- data[i]</a>
+<a class="sourceLine" id="cb8-24" data-line-number="24">          <span class="ex">data</span>[i] <span class="op">&lt;</span>- tmp</a>
+<a class="sourceLine" id="cb8-25" data-line-number="25">          <span class="ex">sorted</span> <span class="op">&lt;</span>- False</a>
+<a class="sourceLine" id="cb8-26" data-line-number="26">        <span class="ex">END</span> IF</a>
+<a class="sourceLine" id="cb8-27" data-line-number="27">      <span class="ex">END</span> FOR</a>
+<a class="sourceLine" id="cb8-28" data-line-number="28"></a>
+<a class="sourceLine" id="cb8-29" data-line-number="29">      <span class="ex">dataSize</span> <span class="op">&lt;</span>- dataSize - 1</a>
+<a class="sourceLine" id="cb8-30" data-line-number="30">    <span class="ex">END</span> WHILE</a>
+<a class="sourceLine" id="cb8-31" data-line-number="31"></a>
+<a class="sourceLine" id="cb8-32" data-line-number="32">    <span class="ex">RETURN</span> data</a>
+<a class="sourceLine" id="cb8-33" data-line-number="33">  <span class="ex">END</span> FUNCTION</a>
+<a class="sourceLine" id="cb8-34" data-line-number="34"></a>
+<a class="sourceLine" id="cb8-35" data-line-number="35">  <span class="ex">FUNCTION</span> fusionSort(data)</a>
+<a class="sourceLine" id="cb8-36" data-line-number="36">      <span class="ex">middle</span> <span class="op">&lt;</span>- data.LENGTH / 2</a>
+<a class="sourceLine" id="cb8-37" data-line-number="37">      </a>
+<a class="sourceLine" id="cb8-38" data-line-number="38">      <span class="ex">leftData</span> <span class="op">&lt;</span>- FROM data[middle + 1] TO data.LENGTH - 1</a>
+<a class="sourceLine" id="cb8-39" data-line-number="39">      <span class="ex">rightData</span> <span class="op">&lt;</span>- FROM data[0] TO data[middle]</a>
+<a class="sourceLine" id="cb8-40" data-line-number="40">      </a>
+<a class="sourceLine" id="cb8-41" data-line-number="41">      <span class="ex">leftArray</span> <span class="op">&lt;</span>- bubbleSort(leftData)</a>
+<a class="sourceLine" id="cb8-42" data-line-number="42">      <span class="ex">rightArray</span> <span class="op">&lt;</span>- bubbleSort(rightData)</a>
+<a class="sourceLine" id="cb8-43" data-line-number="43"></a>
+<a class="sourceLine" id="cb8-44" data-line-number="44">      <span class="ex">fusionedArray</span> <span class="op">&lt;</span>- leftArray + rightArray</a>
+<a class="sourceLine" id="cb8-45" data-line-number="45"></a>
+<a class="sourceLine" id="cb8-46" data-line-number="46">      <span class="ex">RETURN</span> bubbleSort(fusionedArray)</a>
+<a class="sourceLine" id="cb8-47" data-line-number="47">  <span class="ex">END</span> FUNCTION</a>
+<a class="sourceLine" id="cb8-48" data-line-number="48"><span class="ex">END</span> ALGO</a></code></pre></div>
+<hr />
+<ul>
+<li>Quel est l’intêret de cumuler plusieur algorithmes de trie ?</li>
+<li>Cette méthode est-elle plus ou moins efficace que les autres ?</li>
+<li>Que ce passe-t-il pour un tableau de 2 données ?</li>
+</ul>
+<hr />
+<h2 id="complexité-3">Complexité</h2>
+<p>Dans ce calcule nous recherchons une valeur pour le traitement de l’algorithme de <strong>tri en fusion</strong> en concidérant qu’une action élémentaire vaut 1.</p>
+<p>Trie à bulle :</p>
+<ul>
+<li><strong>Val(n) = 13n + 3</strong></li>
+</ul>
+<p>Trie en fusion :</p>
+<ul>
+<li>middle &lt;- data.LENGTH / 2 = 2</li>
+<li>leftData &lt;- FROM data[middle + 1] TO data.LENGTH - 1 = 3</li>
+<li>rightData &lt;- FROM data[0] TO data[middle] = 1</li>
+<li>leftArray &lt;- bubbleSort(leftData) = 1</li>
+<li>rightArray &lt;- bubbleSort(rightData) = 1</li>
+<li>fusionedArray &lt;- leftArray + rightArray = 2</li>
+<li><strong>Total</strong> = 10 x dataSize</li>
+</ul>
+<p>Nous pouvons à présent calculer une valeur pour traitement du tableau suivnat :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1">[<span class="ex">6</span>, 1, 12, 0, 25, 7, 29, 3, 45]</a></code></pre></div>
+<ul>
+<li>Formule : <strong>Val(n) = 10n + (13n + 3)</strong></li>
+<li>Résultat : 63 x 81 + 1 = <strong>210</strong></li>
+</ul>
+<hr />
+<h1 id="conclusion">Conclusion</h1>
+<p>Nous venons de voir à travers <em>3 algorithmes de tri</em> comment il est possible d’<strong>organiser des informations en définissant des étapes logiques</strong> pour y arriver. Comme nous l’avons vu plusieurs algorithmes peuvent résoudre un même problème, vous pouvez à présent <strong>tester vos connaissances</strong> avec les <em>exercices</em> suivants et aller plus loins dans votre découvert des algorithme de tri avec les <em>ressources</em> ci-arpès.</p>
+<h2 id="exercices">Exercices</h2>
+<p>Les ébnoncés qui vont suivre définisse la problèmatique à résoudre et le résultat attendu. Pour chaque exercice vous devez réaliser le pseudo-code, le calcule de la complexité et un script Javascrip réalisant l’algorithme.</p>
+<ul>
+<li><strong>Ecrire un algorithme pour savoir si les nombres d’un tableau sont pair ou non.</strong></li>
+<li>Entrée = <code>[65, 2, 87, 30, 16, 5, 14, 67, 56, 8]</code></li>
+<li><p>Sortie = <code>[65 != pair, 2 = pair, ...]</code></p></li>
+<li><strong>Ecrire un algorithme qui permet de calculer la moyenne des chiffres d’un tableau.</strong></li>
+<li>Entrée = <code>[65, 2, 87, 30, 16, 5, 14, 67, 56, 8]</code></li>
+<li><p>Sortie = <code>Moyenne 35 - Plus petit = 2, Plus grand = 87</code></p></li>
+<li><strong>Ecrire un algorithme qui permet d’additionner les chiffres d’un nombre.</strong></li>
+<li>Entrée = <code>123456789</code></li>
+<li><p>Sortie = <code>1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 = 45</code></p></li>
+</ul>
+<h2 id="ressources">Ressources</h2>
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Algorithme_de_tri">Wikipedia : Algorithme de tri</a></li>
+<li>[Introduction aux algorithmes de tri][https://interstices.info/les-algorithmes-de-tri/]</li>
+<li><a href="http://sorting.at">Sorting.at</a></li>
+<li><a href="http://www.laboiteverte.fr/algorithmes-tri-visualises-danses-folkloriques/">Algorithmes de tri visualisés en danses folkloriques</a></li>
+<li><a href="http://jsfunctionnal.blogspot.com/2009/01/tris-en-javascript.html">Algorithme de tri en Javascript</a></li>
+</ul>

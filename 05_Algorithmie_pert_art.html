@@ -1,0 +1,98 @@
+<h1 id="la-méthode-pert-organiser-et-optimiser-la-gestion-des-tâches">La méthode PERT <em>Organiser et optimiser la gestion des tâches</em></h1>
+<p><img src="img/cover.jpg" /></p>
+<p>Dans la cadre d’<strong>algorithmes</strong> qui intégrent des <strong>processus et des fonctionnalités différentes</strong>, il peut être intéressant de s’interroger sur leurs <strong>interconnexions</strong> et leur <strong>enchainement</strong> afin d’optimiser leur fonctionnement. Nous allons prendre pour exemple le cas classique du <a href="https://fr.wikipedia.org/wiki/Problème_du_voyageur_de_commerce"><strong>voyageur de commerce</strong></a> en exemple pour explorer la méthode du diagramme de <a href="https://fr.wikipedia.org/wiki/PERT">PERT</a>.</p>
+<h1 id="lalgorithme-du-voyageur-de-commerce">L’algorithme du voyageur de commerce</h1>
+<figure>
+<img src="img/coverVRP.jpg" alt="Les VRP - Remords et tristes pets - 1989" /><figcaption>Les VRP - Remords et tristes pets - 1989</figcaption>
+</figure>
+<p>Cas d’étude classique en algorithme, <a href="https://fr.wikipedia.org/wiki/Problème_du_voyageur_de_commerce">le voyageur de commerce</a> - ou vendeur représentant placier a.k.a. <a href="https://www.youtube.com/watch?v=USpiBMaYwlY">VRP</a> - et ses problématiques pour arriver à vendre son produit font partie d’exeption qu’<strong>aucun algorithme n’arrive à résoudre</strong>.</p>
+<p>Nous n’allons pas tenter de le faire mais nous baser sur <strong>une partie de sa problématique</strong> en listant une suite de tâches qu’il doit réaliser chaque jour dasn le cadre de sont métier.</p>
+<h2 id="organiser-une-journée-type">Organiser une journée type</h2>
+<p><img src="img/coverList.jpg" /></p>
+<p>Pour commencer nous allons <strong>lister les étapes de façon purement subjective et arbitraire</strong> pour permettre à notre VRP de démarrer une journée parfaite :</p>
+<ul>
+<li>Se laver</li>
+<li>Prendre un petit déjeuner</li>
+<li>Se brosser les dents</li>
+<li>Appeler la centrale pour avoir sa liste de clients du jour</li>
+<li>Définir l’itinéraire du jour</li>
+<li>Payer la facture d’hotel</li>
+<li>Prendre la voiture</li>
+</ul>
+<p>En analysant rapidement cette liste nous pouvons constater que les tâche à faire sont <strong>plus ou moins longues</strong> et que l’enchainement des tâche suit un <strong>ordre plutôt logique</strong> pour permettre à notre VRP de commencer sa journée de façon idéale.</p>
+<p>Il à néanmoins <strong>des contraintes de résultat</strong>, sa direction lui à fait le reproche de <strong>prendre trop de temps le matin</strong> pour se préparer et lui demande de bien vouloire <strong>accélérer le mouvement</strong> - toutes ressemblance avec un fait réél serait purement fortuite.</p>
+<h2 id="définition-de-la-méthode-pert">Définition de la méthode PERT</h2>
+<p><img src="img/pertMethode.jpg" /></p>
+<p>La méthode <a href="https://fr.wikipedia.org/wiki/PERT">PERT</a> est une méthode conventionnelle utilisable en gestion de projet, ordonnancement et planification développée aux États-Unis par la marine américaine dans les années 1950. <strong>Un diagramme PERT</strong> représente le <strong>planning des tâches</strong> à effectuer pour une action à réaliser et les <strong>délais nécessaires</strong> à la réalisation de chaque tâche.</p>
+<p>Reprenons la liste de notre VRP et plaçons la dans un tableau pour y associer un temps de réalisation pour chaque tâche :</p>
+<p><img src="img/coverPert0.jpg" /></p>
+<p>Nous savons à présent que notre VRP <strong>prend une heure pour se préparer</strong> mais que dans sa liste de tâche, il doit <strong>appeler sa centrale</strong> pour connaitre sa liste de clients. Le VRP n’est <strong>pas maître de ses horaires</strong> de travail mais il connait ses contraintes et le cadre dans lequel il travail.</p>
+<p>Nous allons donc à présent lister <strong>les contrainte du VRP</strong> afin d’avoir une vision claire de son programme :</p>
+<ul>
+<li>Le VRP doit mettre <strong>moins d’1 heure à se préparer</strong></li>
+<li>Le VRP doit <strong>attendre des informations de la centrale</strong></li>
+<li>Le VRP doit être <strong>le plus tôt possible chez un client</strong></li>
+</ul>
+<h2 id="définir-les-liens-entre-les-tâches">Définir les liens entre les tâches</h2>
+<p>Avec toutes ces données nous pouvons à présent aider notre VRP à <strong>optimiser son temps de préparation</strong> pour être encore plus efficace grâce à la méthode <a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a> et au diagramme que nous pouvons réaliser. Dans un premier temps nous plaçons les tâches dans des “cartes” contenant <strong>plusieurs cases que nous allons relier entre elles</strong>.</p>
+<p><img src="img/coverPert1.jpg" /></p>
+<p>Dans le tâches que le VRP doit réaliser nous constatons <strong>les tâches sont liées mais pas nécessairement toutes ensemble</strong>. Nous avons placer sur le schéma ci-dessus un graduiation de temps allant de <strong>1 à 60 minutes</strong> pour nous permettre de définir deux information importantes pour nos tâches :</p>
+<ul>
+<li>Le moment ou la tâche doit commencer</li>
+<li>Le moment ou la tâche doit être finie</li>
+</ul>
+<h2 id="définir-les-temps-dexécution-de-chaque-tâche">Définir les temps d’exécution de chaque tâche</h2>
+<p>En plus des liaison entre les tâche nous devons à présent définir le <strong>planning de réalisation</strong> des tâches en partant du principe qu’elles sont <strong>faites les unes après les autres</strong>.</p>
+<p><img src="img/coverPert2.jpg" /></p>
+<p>Cette représentation nous offre l’avantage de pouvoir <strong>distinguer 3 groupes de tâches</strong> dans le planning du VRP :</p>
+<ul>
+<li><strong>Groupe 1</strong> : se laver payer et partir</li>
+<li><strong>Groupe 2</strong> : prendre le petit déjeuner, se laver les dents, payer et partir</li>
+<li><strong>Groupe 3</strong> : appeler la centrale, définir l’itinéraire et partir</li>
+</ul>
+<p>L’emergence de ces 3 groupes <strong>nous en apprend plus sur les possibilités d’optimisations</strong> que nous avons pour aider notre VRP à se préparer plus rapidement car nous pouvons à présent <strong>calculer le temps nécesssaire</strong> à la réalisation des tâches de chaque groupe :</p>
+<ul>
+<li><strong>Groupe 1</strong> : 10 minutes</li>
+<li><strong>Groupe 2</strong> : 22 minutes</li>
+<li><strong>Groupe 3</strong> : 34 minutes</li>
+</ul>
+<p>Il y à très clairement <strong>le groupe 3 qui se dégage</strong> selon les informations que nous avons fait ressortir de ce schéma car il est le seul dont <strong>le départ n’est pas consécutif au paiement</strong> et qu’il à un <strong>temps d’exécution plus long</strong>.</p>
+<h2 id="organiser-et-regrouper-les-tâches">Organiser et regrouper les tâches</h2>
+<p>Nous pouvons <strong>grâce aux nouvelles données que nous avons généré</strong> en analysant les tâches de notre VRP, tenter une <strong>optimisation de son planning</strong> pour lui permettre de répondre aux exigences de sa direction.</p>
+<p><img src="img/coverPert3.jpg" /></p>
+<p>Nous proposons dans notre diagramme de <strong>regrouper les tâches non bloquantes</strong> ensemble pour que notre VRP puisse les <strong>réaliser en moins de temps</strong> sans nuire à la bonne réalisation de son but final, à savoir <strong>optimiser son temps de préparation</strong>.</p>
+<p>Nous prenons des raccourcis dans cette présentation en considérant qu’il est possible de passer un coup de fil en prenant son petit déjeuner ou-bien qu’il est possible de se brosser les dents en même temps que prendre sa douche, ce qui dans le cadre d’un VRP est tout à fait envisageable.</p>
+<p>La démonstration de l’utilité de la méthode <a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a> n’en reste pas moins réélle car si <strong>les tâches</strong> d’un algorithme peuvent être <strong>traitées en même temps</strong> de quelque manière que ce soit alors <strong>la rapidité d’exécution de l’algorithme est augmentée</strong>.</p>
+<h1 id="la-recette-de-grand-mère-mise-en-pratique-de-la-méthode-pert">La recette de grand mère <em>Mise en pratique de la méthode PERT</em></h1>
+<p><img src="img/nanyKitchen.jpg" /></p>
+<p>Intéressnons-nous à présent à <strong>un autre grand classique</strong> à savoir l’étude algorithmique d’une <strong>recette de cuisine</strong>, pour mettre en prespective la présentation ci-dessus de la méthode <a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a>. Nous allons prendre comme point de départ une recette <strong>qui à la particularité de raconter la manière dont il faut faire le plat</strong> sans donner de quantités ou de durées précises.</p>
+<h2 id="le-potage-finlandais">Le potage Finlandais</h2>
+<p>Contrairement à ce qu’indique son nom, cette recette est un plat classique de la gastronomie Russe qui dans sont aspect peut surprendre les amateur de potages :</p>
+<p>&quot; Battez une douzaine d’œufs comme pour une omelette, avec sel, poivre et persil haché, un peu de parmesan râpé et une cuillerée de bonne crème, versez le tout dans une poêle à omelette, dans laquelle vous aurez fait fondre d’abord un bon morceau de beurre fin, mettez au four très chaud, et lorsque cet appareil sera cuit d’une belle couleur blonde, taillez-en des morceaux avec un coupe-pâte rond uni, mettez-les sur des croûtons de mie de pain passés au beurre et de la même grandeur que les ronds d’omelette, saupoudrez de parmesan râpé, humectez le dessus avec du beurre fondu et passez quelques minutes avant de servir au four chaud, servez-les à part sur une serviette et envoyez avec un bon consommé clarifié. &quot;</p>
+<blockquote>
+<p><a href="https://books.google.fr/books?id=684XDgAAQBAJ">La Gastronomie en Russie</a>, Alphonse Petit - 2015 Collection XIX</p>
+</blockquote>
+<h2 id="mises-en-pratique">Mises en pratique</h2>
+<p>A partir de la recette du potage Finlandais vous devez réaliser un algorithme simple permettant d’en réaliser une portion.</p>
+<p><img src="img/rusianSoup.jpg" /></p>
+<h3 id="mon-premier-potage-finlandais">Mon premier potage Finlandais</h3>
+<p>Pour réaliser ce travail vous devez dans un premier temps définir les critères dont vous aurez besoin pour réaliser un diagramme de <a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a> et un calcule de la compléxité de votre algorithme.</p>
+<p>En terme de données pour votre algorithme vous pouvez définir pour chaque ingrédients de la recette plusieurs critères :</p>
+<ul>
+<li>les temps de préparation</li>
+<li>les temps de cuisson</li>
+<li>les quantités</li>
+<li>les étapes de réalisation</li>
+<li>…</li>
+</ul>
+<p>La <strong>contrainte principale</strong> que vous devez respecter dans votre démonstration se situe au niveau de l’<strong>exécution</strong> car la recette doit être faite <strong>le plus rapidement possible</strong> pour être <strong>servie chaude</strong> sans altérer le goût des produits qui doivent être <strong>servis au plus vite après leur cuisson</strong>.</p>
+<h3 id="soir-de-gala-à-lambassade">Soir de gala à l’ambassade</h3>
+<p>Votr erecette est un succès ! L’ambassade Russe vous demande de venir préparer pour une soirée de gala <strong>votre recette de potage Finlandais pour 500 invités</strong> de marque. Vous devez adapter votre planning de travail pour répondre aux <strong>contraintes de temps d’exécution</strong> pour un <strong>volume de production plus grand</strong>.</p>
+<hr />
+<h2 id="ressources">Ressources</h2>
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a> <em>Méthodologie</em></li>
+<li><a href="https://fr.wikipedia.org/wiki/Problème_du_voyageur_de_commerce"><strong>Problème du voyageur de commerce</strong></a> <em>Cas d’étude</em></li>
+<li><a href="https://fr.wikipedia.org/wiki/Les_VRP"><strong>Les VRP</strong></a> <em>Groupe Punk - 1968</em></li>
+<li><a href="https://books.google.fr/books?id=684XDgAAQBAJ"><strong>La Gastronomie en Russie</strong></a> <em>Alphonse Petit - 2015 Collection XIX</em></li>
+</ul>
