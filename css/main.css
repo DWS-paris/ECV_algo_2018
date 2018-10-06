@@ -17,6 +17,7 @@ Reset
         -webkit-font-smoothing : antialiased;
         font-size: 2rem;
         line-height: 1.5;
+        padding: 2rem;
     }
 
     ul{
@@ -95,13 +96,13 @@ Titles
     }
 
     h1:first-of-type {
-        position: relative;
+        /* position: relative;
         z-index: 3;
         text-align: center;
         max-width: 60rem;
         margin: 10rem auto 30rem auto;
         background: rgba(255, 255, 255, .7);
-        padding: 4rem;
+        padding: 4rem; */
     }
 
     h1 + p{
@@ -172,20 +173,6 @@ Titles
 /**/
 
 /* 
-Images
-*/
-    h1:first-of-type + p img{
-        position: absolute;
-        top: 4rem;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 110rem;
-        z-index: 2;
-    }
-/**/
-
-
-/* 
 Scree configuration
 */
     @media screen{
@@ -193,7 +180,7 @@ Scree configuration
         Title
         */
             h1:first-of-type {
-                margin: 30rem auto 35rem auto;
+                margin-top: 13rem;
             }
 
             h2{
@@ -220,9 +207,11 @@ Scree configuration
                 background-color: white;
             }
 
-            header{
+            header {
                 top: 0;
-                border-bottom: .1rem dotted #d6d6d6
+                left: 0;
+                border-bottom: .1rem dotted #d6d6d6;
+                padding: 1.5rem 2rem 1rem 2rem;
             }
 
             footer{
@@ -230,7 +219,11 @@ Scree configuration
                 border-top: .1rem dotted #d6d6d6
             }
 
-            header p, footer p {
+            header p{
+                margin: 0 0 .5rem 0;
+            }
+
+            footer p{
                 margin: 0 0 .2rem 0;
             }
 
@@ -250,6 +243,7 @@ Scree configuration
                 border: .1rem dotted #999;
                 padding: .5rem .7rem;
                 margin-right: .5rem;
+                margin-bottom: .5rem;
             }
         /**/
 
@@ -259,6 +253,11 @@ Scree configuration
             main, header section, footer p{
                 max-width: 90rem;
                 margin: auto;
+            }
+
+            footer p{
+                margin-bottom: 1rem;
+                max-width: 94rem
             }
 
             main{
@@ -307,6 +306,37 @@ Scree configuration
             p + figure{
                 margin-top: 2rem;
                 clear: left;
+            }
+        /**/
+    }
+/**/
+
+
+/* 
+Responsiv design
+*/
+    @media screen and (min-width: 700px){
+        /* 
+        Titles
+        */
+            h1:first-of-type + p img {
+                position: absolute;
+                top: 4rem;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 110rem;
+                z-index: 2;
+            }
+
+            h1:first-of-type {
+                position: relative;
+                z-index: 3;
+                text-align: center;
+                max-width: 60rem;
+                margin: 10rem auto 30rem auto;
+                background: rgba(255, 255, 255, .7);
+                padding: 4rem;
+                margin: 30rem auto 35rem auto;
             }
         /**/
     }
