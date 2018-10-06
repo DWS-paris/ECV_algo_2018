@@ -25,7 +25,7 @@
 <p><img src="img/pertMethode.jpg" /></p>
 <p>La méthode <a href="https://fr.wikipedia.org/wiki/PERT">PERT</a> est une méthode conventionnelle utilisable en gestion de projet, ordonnancement et planification développée aux États-Unis par la marine américaine dans les années 1950. <strong>Un diagramme PERT</strong> représente le <strong>planning des tâches</strong> à effectuer pour une action à réaliser et les <strong>délais nécessaires</strong> à la réalisation de chaque tâche.</p>
 <p>Reprenons la liste de notre VRP et plaçons la dans un tableau pour y associer un temps de réalisation pour chaque tâche :</p>
-<p><img src="img/coverPert0.jpg" /></p>
+<p><img src="img/coverPERT0.jpg" /></p>
 <p>Nous savons à présent que notre VRP <strong>prend une heure pour se préparer</strong> mais que dans sa liste de tâche, il doit <strong>appeler sa centrale</strong> pour connaitre sa liste de clients. Le VRP n’est <strong>pas maître de ses horaires</strong> de travail mais il connait ses contraintes et le cadre dans lequel il travail.</p>
 <p>Nous allons donc à présent lister <strong>les contrainte du VRP</strong> afin d’avoir une vision claire de son programme :</p>
 <ul>
@@ -35,7 +35,7 @@
 </ul>
 <h2 id="définir-les-liens-entre-les-tâches">Définir les liens entre les tâches</h2>
 <p>Avec toutes ces données nous pouvons à présent aider notre VRP à <strong>optimiser son temps de préparation</strong> pour être encore plus efficace grâce à la méthode <a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a> et au diagramme que nous pouvons réaliser. Dans un premier temps nous plaçons les tâches dans des “cartes” contenant <strong>plusieurs cases que nous allons relier entre elles</strong>.</p>
-<p><img src="img/coverPert1.jpg" /></p>
+<p><img src="img/coverPERT1.jpg" /></p>
 <p>Dans le tâches que le VRP doit réaliser nous constatons <strong>les tâches sont liées mais pas nécessairement toutes ensemble</strong>. Nous avons placer sur le schéma ci-dessus un graduiation de temps allant de <strong>1 à 60 minutes</strong> pour nous permettre de définir deux information importantes pour nos tâches :</p>
 <ul>
 <li>Le moment ou la tâche doit commencer</li>
@@ -43,7 +43,7 @@
 </ul>
 <h2 id="définir-les-temps-dexécution-de-chaque-tâche">Définir les temps d’exécution de chaque tâche</h2>
 <p>En plus des liaison entre les tâche nous devons à présent définir le <strong>planning de réalisation</strong> des tâches en partant du principe qu’elles sont <strong>faites les unes après les autres</strong>.</p>
-<p><img src="img/coverPert2.jpg" /></p>
+<p><img src="img/coverPERT2.jpg" /></p>
 <p>Cette représentation nous offre l’avantage de pouvoir <strong>distinguer 3 groupes de tâches</strong> dans le planning du VRP :</p>
 <ul>
 <li><strong>Groupe 1</strong> : se laver payer et partir</li>
@@ -59,7 +59,7 @@
 <p>Il y à très clairement <strong>le groupe 3 qui se dégage</strong> selon les informations que nous avons fait ressortir de ce schéma car il est le seul dont <strong>le départ n’est pas consécutif au paiement</strong> et qu’il à un <strong>temps d’exécution plus long</strong>.</p>
 <h2 id="organiser-et-regrouper-les-tâches">Organiser et regrouper les tâches</h2>
 <p>Nous pouvons <strong>grâce aux nouvelles données que nous avons généré</strong> en analysant les tâches de notre VRP, tenter une <strong>optimisation de son planning</strong> pour lui permettre de répondre aux exigences de sa direction.</p>
-<p><img src="img/coverPert3.jpg" /></p>
+<p><img src="img/coverPERT3.jpg" /></p>
 <p>Nous proposons dans notre diagramme de <strong>regrouper les tâches non bloquantes</strong> ensemble pour que notre VRP puisse les <strong>réaliser en moins de temps</strong> sans nuire à la bonne réalisation de son but final, à savoir <strong>optimiser son temps de préparation</strong>.</p>
 <p>Nous prenons des raccourcis dans cette présentation en considérant qu’il est possible de passer un coup de fil en prenant son petit déjeuner ou-bien qu’il est possible de se brosser les dents en même temps que prendre sa douche, ce qui dans le cadre d’un VRP est tout à fait envisageable.</p>
 <p>La démonstration de l’utilité de la méthode <a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a> n’en reste pas moins réélle car si <strong>les tâches</strong> d’un algorithme peuvent être <strong>traitées en même temps</strong> de quelque manière que ce soit alors <strong>la rapidité d’exécution de l’algorithme est augmentée</strong>.</p>
