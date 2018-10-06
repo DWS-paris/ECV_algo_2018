@@ -62,7 +62,7 @@ Function to check user token
 Function to protect access
 */
     const logUser = async () => {
-        const userResponse = prompt('What is the magic word?');
+        const userResponse = prompt('I think you know what the problem is just has well has I do...');
         if(userResponse === passwordAccess){
             await localStorage.setItem('user_mooc_access', tokenAccess);
             await setDocumentContent(pageData)
