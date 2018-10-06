@@ -71,7 +71,7 @@ Function to protect access
 
         } else {
             alert('Access not allowed');
-            window.location = "presentation_sld.html";
+            // window.location = "presentation_sld.html";
         };
     }
 /**/
