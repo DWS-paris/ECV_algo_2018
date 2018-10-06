@@ -1,0 +1,55 @@
+/* 
+Images
+*/
+    [src="img/forbiddenPlanetAff.jpg"], [src="img/2001Aff.jpg"], [src="img/bladeRunnerAff.jpg"] {
+        float: left;
+        width: 20rem;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    [src="img/daril.jpg"], [src="img/ashAlien.jpg"], [src="img/irobot.jpg"] {
+        float: right;
+        width: 20rem;
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    [src="img/alainTapp.jpg"], [src="img/yannLecun.jpg"]{
+        float: left;
+        margin-right: 2rem;
+    }
+
+    [src="img/alainTapp.jpg"], [src="img/yannLecun.jpg"], [src="img/jeanPonce.jpg"]{
+        margin-bottom: 3rem;
+    }
+
+    [src="img/jeanPonce.jpg"]{
+        float: right;
+        margin-left: 2rem;
+    }
+
+    #alain-tapp, #yannLecun, #jean-ponce, #alain-tapp + p, #yann-lecun + p, #jean-ponce + p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    #alain-tapp, #yann-lecun, #jean-ponce{
+        margin-top: 7rem;
+    }
+
+    #alain-tapp + p +  ul, #jean-ponce + p +  ul, #yann-lecun + p +  ul{
+        list-style: none;
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    #alain-tapp + p +  ul + p, #yann-lecun + p +  ul + *{
+        clear: both;
+    }
+
+    #jean-ponce ~ ul + p{
+        clear: both;
+    }
+
+/**/

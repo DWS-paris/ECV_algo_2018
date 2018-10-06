@@ -237,11 +237,11 @@
 </tbody>
 </table>
 <p>Cette table d’addition nous permet d’effectuer de tête des additions en binaire simples mais pour des calcules plus complexes il faut suivre une logique de lecture gauche/droite en respectant le principe d’inversion des valeur de 1 à 0 à 1.</p>
-<h3 id="chiffre-se-termine-par-0-1001010-1-1001011">Chiffre se termine par 0 <br>1001010 + 1 = 1001011</h3>
+<h3 id="chiffre-se-termine-par-0-1001010-1-1001011">Chiffre se termine par 0 : 1001010 + 1 = 1001011</h3>
 <p>On parcourt le nombre de gauche à droite, et lorsqu’on arrive à la fin, si on trouve un 0, on le remplace par un 1 et on passe à l’état final.</p>
-<h3 id="chiffre-se-termine-par-1-1001011-1-1001100">Chiffre se termine par 1 <br>1001011 + 1 = 1001100</h3>
+<h3 id="chiffre-se-termine-par-1-1001011-1-1001100">Chiffre se termine par 1 : 1001011 + 1 = 1001100</h3>
 <p>Après avoir parcouru le nombre de gauche à droite, on revient de droite à gauche, tant qu’on trouve un 1, on le remplace par un 0, lorsqu’on trouve la première occurrence de 0, on la remplace par 1 puis on passe à l’état final.</p>
-<h3 id="chiffre-uniquement-composé-de-1-1111111-1-10000000">Chiffre uniquement composé de 1 <br> 1111111 + 1 = 10000000</h3>
+<h3 id="chiffre-uniquement-composé-de-1-1111111-1-10000000">Chiffre uniquement composé de 1 : 1111111 + 1 = 10000000</h3>
 <p>Après avoir parcouru le nombre de gauche à droite, on revient de droite à gauche, tant qu’on trouve un 1, on le remplace par un 0 et lorsqu’on arrive au dernier 1, on insère un 1 dans la case vide à gauche et on passe à l’état final.</p>
 <p>La table d’addition et les calcules ci-dessus n’ont pas pour simple but d’explorer l’arithmétique binaire - ou plus simplement le calcul binaire - mais ils permettent de faire le lien avec la ou les machines qui exécuterons nos algorithmes. Car les deux chiffres 0 et 1 sont traduit par la machine en la tension ou passage d’un courant électrique. Par exemple, le 0 peut être représenté par l’état éteint (tension ou courant nul) et 1 par l’état allumé (tension qui existe ou courant qui passe).</p>
 <h2 id="de-la-logique-à-laction">De la logique à l’action</h2>
@@ -251,11 +251,46 @@
 <p><a href=""><img src="./img/table_add_1.png" alt="Table d’action" /></a></p>
 <p>Quel que soit le nombre envoyé dans la machine, cette dernière utilise la table d’action et agit de la manière suivante :</p>
 <ul>
-<li>Si elle est à l’état 1 et trouve une case vide, elle n’écrit rien, décale sa tête de lecture d’une case à gauche et passe à l’état 2</li>
-<li>Si elle est à l’état 2 et lit un 0, elle écrit 0, décale sa tête de lecture d’une case à gauche et reste à l’état 2</li>
-<li>Si elle est à l’état 2 et lit un 1, elle écrit 1, décale sa tête de lecture d’une case à gauche et reste à l’état 2</li>
-<li>Si elle est à l’état 2 et trouve une case vide, elle n’écrit rien, décale sa tête de lecture d’une case à droite et passe à l’état 3</li>
-<li>Si elle est à l’état 3 et lit un 1, elle écrit 0, décale sa tête de lecture d’une case à droite et reste à l’état 3</li>
-<li>Si elle est à l’état 3 et lit un 0, elle écrit 1, décale sa tête de lecture d’une case à droite et passe à l’état final.</li>
-<li>Si elle est à l’état 3 et trouve une case vide, elle écrit 1, décale sa tête de lecture d’une case à droite et passe à l’état final</li>
+<li>Si elle est à l’état 1 et trouve une case vide :
+<ul>
+<li>elle n’écrit rien</li>
+<li>décale sa tête de lecture d’une case à gauche</li>
+<li>passe à l’état 2</li>
+</ul></li>
+<li>Si elle est à l’état 2 et lit un 0 :
+<ul>
+<li>elle écrit 0</li>
+<li>décale sa tête de lecture d’une case à gauche</li>
+<li>reste à l’état 2</li>
+</ul></li>
+<li>Si elle est à l’état 2 et lit un 1 :
+<ul>
+<li>elle écrit 1</li>
+<li>décale sa tête de lecture d’une case à gauche</li>
+<li>reste à l’état 2</li>
+</ul></li>
+<li>Si elle est à l’état 2 et trouve une case vide :
+<ul>
+<li>elle n’écrit rien</li>
+<li>décale sa tête de lecture d’une case à droite</li>
+<li>passe à l’état 3</li>
+</ul></li>
+<li>Si elle est à l’état 3 et lit un 1 :
+<ul>
+<li>elle écrit 0</li>
+<li>décale sa tête de lecture d’une case à droite</li>
+<li>reste à l’état 3</li>
+</ul></li>
+<li>Si elle est à l’état 3 et lit un 0 :
+<ul>
+<li>elle écrit 1</li>
+<li>décale sa tête de lecture d’une case à droite</li>
+<li>passe à l’état final</li>
+</ul></li>
+<li>Si elle est à l’état 3 et trouve une case vide :
+<ul>
+<li>elle écrit 1</li>
+<li>décale sa tête de lecture d’une case à droite</li>
+<li>passe à l’état final</li>
+</ul></li>
 </ul>
