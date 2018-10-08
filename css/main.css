@@ -1,53 +1,98 @@
 /* 
 Reset
 */
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    html{
-        font-size: 62.5%;
-    }
+html{
+    font-size: 62.5%;
+}
 
-    body{
-        font-family: sans-serif;
-        font-weight: 100;
-        -webkit-font-smoothing : antialiased;
+body{
+    font-family: sans-serif;
+    font-weight: 100;
+    -webkit-font-smoothing : antialiased;
+    font-size: 2rem;
+    line-height: 1.5;
+    padding: 2rem;
+}
+
+ul{
+    margin: 2rem 0 2rem 2rem;
+}
+
+p{
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+hr{
+    clear: both;
+    margin: 2rem auto;
+}
+
+img{
+    max-width: 100%;
+}
+
+a:not(.sourceLine){
+    color: black;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: .1rem dotted #999
+}
+
+iframe {
+    width: 100%;
+    height: 55rem;
+}
+/**/
+
+/* 
+Code
+*/
+    pre.sourceCode {
+        background: #3b3b3b;
+        color: white;
+        line-height: 1;
+        margin: 0 auto 4rem auto;
+        font-family: serif;
         font-size: 2rem;
-        line-height: 1.5;
+        border-bottom-left-radius: 2rem;
+        border-top-right-radius: 2rem;
         padding: 2rem;
+        overflow: auto;
     }
 
-    ul{
-        margin: 2rem 0 2rem 2rem;
+    .sourceCode.html .dt{
+        color: white;
     }
 
-    p{
-        margin-top: 2rem;
-        margin-bottom: 4rem;
+    .sourceCode.json .dt, .sourceCode.json .er, .sourceCode.js .kw, .sourceCode.html .dt, .sourceCode.html .kw, .sourceCode.html .ot, .sourceCode.css .kw  {
+        color: #90dcfe;
     }
 
-    hr{
-        clear: both;
-        margin: 2rem auto;
+    .sourceCode.css  {
+        color: #ffd777;
     }
 
-    img{
-        max-width: 100%;
+    .sourceCode.json .st, .sourceCode.js .st, .sourceCode.html .st {
+        color: #ce9178;
     }
 
-    a:not(.sourceLine){
-        color: black;
-        font-weight: 400;
-        text-decoration: none;
-        border-bottom: .1rem dotted #999
+    .sourceCode.js .co{
+        color: #69af49;
     }
 
-    iframe {
-        width: 100%;
-        height: 55rem;
+    .sourceCode.js .dv, .sourceCode.css .dv{
+        color: #b5cea8;
+    }
+
+    .sourceCode.css .in{
+        color: white;
     }
 /**/
 
@@ -55,325 +100,315 @@ Reset
 /* 
 Table
 */
-    th {
-        background-color: #999;
-        color: white;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-        padding: 1rem;
-        text-align: left;
-    }
+th {
+    background-color: #999;
+    color: white;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    text-align: left;
+}
 
-    table {
-        width: 100%;
-    }
+table {
+    width: 100%;
+}
 
-    tr {
-        font-size: 1.5rem;
-    }
+tr {
+    font-size: 1.5rem;
+}
 
-    td:first-of-type {
-        font-weight: 900;
-    }
+td:first-of-type {
+    font-weight: 900;
+}
 
-    td {
-        border-bottom: .1rem dotted #eee;
-        padding: .5rem;
-    }
+td {
+    border-bottom: .1rem dotted #eee;
+    padding: .5rem;
+}
 /**/
 
 /* 
 Titles
 */
-    h1, h2, h3, h4{
-        line-height: 1;
-    }
+h1, h2, h3, h4{
+    line-height: 1;
+}
 
-    h1{
-        text-transform: uppercase;
-        font-weight: 900;
-        padding: 2rem 0;
-    }
+h1{
+    text-transform: uppercase;
+    font-weight: 900;
+    padding: 2rem 0;
+}
 
-    h1:first-of-type {
-        /* position: relative;
-        z-index: 3;
-        text-align: center;
-        max-width: 60rem;
-        margin: 10rem auto 30rem auto;
-        background: rgba(255, 255, 255, .7);
-        padding: 4rem; */
-    }
+h1:first-of-type {
+    /* position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 60rem;
+    margin: 10rem auto 30rem auto;
+    background: rgba(255, 255, 255, .7);
+    padding: 4rem; */
+}
 
-    h1 + p{
-        margin-top: 0rem;
-    }
+h1 + p{
+    margin-top: 0rem;
+}
 
-    h1 em{
-        margin-top: .5rem;
-        font-weight: 100;
-        font-size: 2rem;
-        display: block;
-        font-style: normal;
-        margin-top: .5rem;
-    }
+h1 em{
+    margin-top: .5rem;
+    font-weight: 100;
+    font-size: 2rem;
+    display: block;
+    font-style: normal;
+    margin-top: .5rem;
+}
 
-    h1:not(:first-of-type) em{
-        border-left: 2rem solid black;
-        padding-left: .5rem;
-    }
+h1:not(:first-of-type) em{
+    border-left: 2rem solid black;
+    padding-left: .5rem;
+}
 
-    h1:not(:first-of-type){
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-    }
+h1:not(:first-of-type){
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
 
-    h2{
-        font-weight: 100;
-        text-transform: uppercase;
-        margin: 5rem auto 2rem auto
-    }
+h2{
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 5rem auto 2rem auto
+}
 
-    h2::after, h2::before, h1:not(:first-of-type)::before{
-        content: '';
-        display: block;
-        background-color: black;
-    }
+h2::after, h2::before, h1:not(:first-of-type)::before{
+    content: '';
+    display: block;
+    background-color: black;
+}
 
-    h2::before{
-        width: 2rem;
-        height: 2rem;
-        margin-bottom: 2rem;
-    }
+h2::before{
+    width: 2rem;
+    height: 2rem;
+    margin-bottom: 2rem;
+}
 
-    h2::after, h1:not(:first-of-type)::before{
-        margin-top: 2rem;
-        width: 10rem;
-        height: .1rem;
-    }
+h2::after, h1:not(:first-of-type)::before{
+    margin-top: 2rem;
+    width: 10rem;
+    height: .1rem;
+}
 
-    h1:not(:first-of-type)::before{
-        margin-bottom: 3rem;
-    }
+h1:not(:first-of-type)::before{
+    margin-bottom: 3rem;
+}
 
-    h3 {
-        margin-top: 6rem;
-        margin-bottom: 3rem;
-    }
+h3 {
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
 
-    hr + h3 {
-        background: black;
-        display: inline-block;
-        padding: 1rem;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        color: white;
-        margin-top: 0;
-    }
+hr + h3 {
+    background: black;
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 0;
+}
 /**/
 
 /* 
 Scree configuration
 */
-    @media screen{
-        /*
-        Title
-        */
-            h1:first-of-type {
-                margin-top: 13rem;
-            }
+@media screen{
+    /*
+    Title
+    */
+        h1:first-of-type {
+            margin-top: 13rem;
+        }
 
-            h2{
-                font-size: 2.5rem; 
-                margin: 20rem auto 2rem auto
-            }
+        h2{
+            font-size: 2.5rem; 
+            margin: 20rem auto 2rem auto
+        }
 
-            h1:not(:first-of-type){
-                margin-top: 20rem;
-            }
-        /**/
+        h1:not(:first-of-type){
+            margin-top: 20rem;
+        }
+    /**/
 
-        /* 
-        Header
-        */
-            header, footer {
-                position: fixed;
-                font-size: 1.2rem;
-                font-weight: 400;
-                text-transform: uppercase;
-                width: 100%;
-                padding: 1rem 0;
-                z-index: 10;
-                background-color: white;
-            }
+    /* 
+    Header
+    */
+        header, footer {
+            position: fixed;
+            font-size: 1.2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            width: 100%;
+            padding: 1rem 0;
+            z-index: 10;
+            background-color: white;
+        }
 
-            header {
-                top: 0;
-                left: 0;
-                border-bottom: .1rem dotted #d6d6d6;
-                padding: 1.5rem 2rem 1rem 2rem;
-            }
+        header {
+            top: 0;
+            left: 0;
+            border-bottom: .1rem dotted #d6d6d6;
+            padding: 1.5rem 2rem 1rem 2rem;
+        }
 
-            footer{
-                bottom: 0;
-                border-top: .1rem dotted #d6d6d6
-            }
+        footer{
+            bottom: 0;
+            border-top: .1rem dotted #d6d6d6
+        }
 
-            header p{
-                margin: 0 0 .5rem 0;
-            }
+        header p{
+            margin: 0 0 .5rem 0;
+        }
 
-            footer p{
-                margin: 0 0 .2rem 0;
-            }
+        footer p{
+            margin: 0 0 .2rem 0;
+        }
 
-            header p em, footer p {
-                font-style: normal;
-                text-transform: none;
-                opacity: .5;
-                margin-left: 1rem;
-            }
+        header p em, footer p {
+            font-style: normal;
+            text-transform: none;
+            opacity: .5;
+            margin-left: 1rem;
+        }
 
-            header button {
-                font-size: 1rem;
-                text-transform: uppercase;
-                background: transparent;
-                border: none;
-                font-weight: 900;
-                border: .1rem dotted #999;
-                padding: .5rem .7rem;
-                margin-right: .5rem;
-                margin-bottom: .5rem;
-            }
-        /**/
+        header button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            background: transparent;
+            border: none;
+            font-weight: 900;
+            border: .1rem dotted #999;
+            padding: .5rem .7rem;
+            margin-right: .5rem;
+            margin-bottom: .5rem;
+        }
+    /**/
 
-        /* 
-        Blocks
-        */
-            main, header section, footer p{
-                max-width: 90rem;
-                margin: auto;
-            }
+    /* 
+    Blocks
+    */
+        main, header section, footer p{
+            max-width: 90rem;
+            margin: auto;
+        }
 
-            footer p{
-                margin-bottom: 1rem;
-                max-width: 94rem
-            }
+        footer p{
+            margin-bottom: 1rem;
+            max-width: 94rem
+        }
 
-            main{
-                padding-bottom: 5rem;
-            }
+        main{
+            padding-bottom: 5rem;
+        }
 
-            div.sourceCode {
-                background: #d6d6d6;
-                line-height: 1;
-                margin: 0 auto 4rem auto;
-                font-family: serif;
-                font-size: 2rem;
-                border-bottom-left-radius: 2rem;
-                border-top-right-radius: 2rem;
-                padding: 2rem;
-            }
+        blockquote {
+            border-left: .5rem solid #d6d6d6;
+            padding-left: 1rem;
+        }
+    /**/
 
-            blockquote {
-                border-left: .5rem solid #d6d6d6;
-                padding-left: 1rem;
-            }
-        /**/
+    /* 
+    Images
+    */
+        h1 + p img, figure img{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
 
-        /* 
-        Images
-        */
-            h1 + p img, figure img{
-                width: 100%;
-                margin-bottom: 1rem;
-            }
+        figure img {
+            border-top-left-radius: 2rem;
+            border: .1rem solid #eee;
+        }
 
-            figure img {
-                border-top-left-radius: 2rem;
-            }
+        figcaption {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            border: .1rem solid #eee;
+            padding: 1rem;
+            margin-top: -2rem;
+            margin-bottom: 4rem;
+            border-bottom-right-radius: 2rem;
+        }
 
-            figcaption {
-                font-size: 1.1rem;
-                text-transform: uppercase;
-                border: .1rem solid #eee;
-                padding: 1rem;
-                margin-top: -2rem;
-                margin-bottom: 4rem;
-                border-bottom-right-radius: 2rem;
-            }
-
-            p + figure{
-                margin-top: 2rem;
-                clear: left;
-            }
-        /**/
-    }
+        p + figure{
+            margin-top: 2rem;
+            clear: left;
+        }
+    /**/
+}
 /**/
 
 
 /* 
 Responsiv design
 */
-    @media screen and (min-width: 700px){
-        /* 
-        Titles
-        */
-            h1:first-of-type + p img {
-                position: absolute;
-                top: 4rem;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 110rem;
-                z-index: 2;
-            }
+@media screen and (min-width: 700px){
+    /* 
+    Titles
+    */
+        h1:first-of-type + p img {
+            position: absolute;
+            top: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 110rem;
+            z-index: 2;
+        }
 
-            h1:first-of-type {
-                position: relative;
-                z-index: 3;
-                text-align: center;
-                max-width: 60rem;
-                margin: 10rem auto 30rem auto;
-                background: rgba(255, 255, 255, .7);
-                padding: 4rem;
-                margin: 30rem auto 35rem auto;
-            }
-        /**/
-    }
+        h1:first-of-type {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            max-width: 60rem;
+            margin: 10rem auto 30rem auto;
+            background: rgba(255, 255, 255, .7);
+            padding: 4rem;
+            margin: 30rem auto 35rem auto;
+        }
+    /**/
+}
 /**/
 
 
 /* 
 Printer configuration
 */
-    @page {
-        size: A4;
-        margin-top: 3cm;
-        margin-bottom: 3cm;
-        margin-left: 1.5cm;
-        margin-right: 1.5cm;
+@page {
+    size: A4;
+    margin-top: 3cm;
+    margin-bottom: 3cm;
+    margin-left: 1.5cm;
+    margin-right: 1.5cm;
+}
+
+@page :first {
+    margin-top: 1.5cm;
+}
+
+@media print{
+
+    html{
+        font-size: 55%;
     }
 
-    @page :first {
-        margin-top: 1.5cm;
+    body{
+        padding: 15mm;
     }
 
-    @media print{
-
-        html{
-            font-size: 55%;
-        }
-
-        body{
-            padding: 15mm;
-        }
-
-        header{
-            display: none;
-        }
-
-        img{
-            width: 100%;
-        }
+    header{
+        display: none;
     }
+
+    img{
+        width: 100%;
+    }
+}
 /**/
