@@ -23,9 +23,9 @@
 <p>Il à néanmoins <strong>des contraintes de résultat</strong>, sa direction lui à fait le reproche de <strong>prendre trop de temps le matin</strong> pour se préparer et lui demande de bien vouloire <strong>accélérer le mouvement</strong> - toutes ressemblance avec un fait réél serait purement fortuite.</p>
 <h2 id="définition-de-la-méthode-pert">Définition de la méthode PERT</h2>
 <p><img src="img/pertMethode.jpg" /></p>
-<p>La méthode <a href="https://fr.wikipedia.org/wiki/PERT">PERT</a> est une méthode conventionnelle utilisable en gestion de projet, ordonnancement et planification développée aux États-Unis par la marine américaine dans les années 1950. <strong>Un diagramme PERT</strong> représente le <strong>planning des tâches</strong> à effectuer pour une action à réaliser et les <strong>délais nécessaires</strong> à la réalisation de chaque tâche.</p>
+<p>La méthode <a href="https://fr.wikipedia.org/wiki/PERT">PERT</a> est une méthode conventionnelle utilisable en gestion de projet, ordonnancement et planification développée aux États-Unis par la marine américaine dans les années 195_<em>0. <strong>Un diagramme PERT</strong> représente le </em>_<strong>planning des tâches</strong> à effectuer pour une action à réaliser et les <strong>délais nécessaires</strong> à la réalisation de chaque tâche.</p>
 <p>Reprenons la liste de notre VRP et plaçons la dans un tableau pour y associer un temps de réalisation pour chaque tâche :</p>
-<p><img src="img/coverPERT0.jpg" /></p>
+<p><img src="img/coverPERT0.jpg" />__</p>
 <p>Nous savons à présent que notre VRP <strong>prend une heure pour se préparer</strong> mais que dans sa liste de tâche, il doit <strong>appeler sa centrale</strong> pour connaitre sa liste de clients. Le VRP n’est <strong>pas maître de ses horaires</strong> de travail mais il connait ses contraintes et le cadre dans lequel il travail.</p>
 <p>Nous allons donc à présent lister <strong>les contrainte du VRP</strong> afin d’avoir une vision claire de son programme :</p>
 <ul>
@@ -68,14 +68,14 @@
 <p>Intéressnons-nous à présent à <strong>un autre grand classique</strong> à savoir l’étude algorithmique d’une <strong>recette de cuisine</strong>, pour mettre en prespective la présentation ci-dessus de la méthode <a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a>. Nous allons prendre comme point de départ une recette <strong>qui à la particularité de raconter la manière dont il faut faire le plat</strong> sans donner de quantités ou de durées précises.</p>
 <h2 id="le-potage-finlandais">Le potage Finlandais</h2>
 <p>Contrairement à ce qu’indique son nom, cette recette est un plat classique de la gastronomie Russe qui dans sont aspect peut surprendre les amateur de potages :</p>
-<p>&quot; Battez une douzaine d’œufs comme pour une omelette, avec sel, poivre et persil haché, un peu de parmesan râpé et une cuillerée de bonne crème, versez le tout dans une poêle à omelette, dans laquelle vous aurez fait fondre d’abord un bon morceau de beurre fin, mettez au four très chaud, et lorsque cet appareil sera cuit d’une belle couleur blonde, taillez-en des morceaux avec un coupe-pâte rond uni, mettez-les sur des croûtons de mie de pain passés au beurre et de la même grandeur que les ronds d’omelette, saupoudrez de parmesan râpé, humectez le dessus avec du beurre fondu et passez quelques minutes avant de servir au four chaud, servez-les à part sur une serviette et envoyez avec un bon consommé clarifié. &quot;</p>
+<p>&quot; Battez trois œufs comme pour une omelette, avec sel, poivre et persil haché, un peu de parmesan râpé et une cuillerée de bonne crème, versez le tout dans une poêle à omelette, dans laquelle vous aurez fait fondre d’abord un bon morceau de beurre fin, mettez au four très chaud, et lorsque cet appareil sera cuit d’une belle couleur blonde, taillez-en des morceaux avec un coupe-pâte rond uni, mettez-les sur des croûtons de mie de pain passés au beurre et de la même grandeur que les ronds d’omelette, saupoudrez de parmesan râpé, humectez le dessus avec du beurre fondu et passez quelques minutes avant de servir au four chaud, servez-les à part sur une serviette et envoyez avec un bon consommé clarifié. &quot;</p>
 <blockquote>
 <p><a href="https://books.google.fr/books?id=684XDgAAQBAJ">La Gastronomie en Russie</a>, Alphonse Petit - 2015 Collection XIX</p>
 </blockquote>
 <h2 id="mises-en-pratique">Mises en pratique</h2>
 <p>A partir de la recette du potage Finlandais vous devez réaliser un algorithme simple permettant d’en réaliser une portion.</p>
 <p><img src="img/rusianSoup.jpg" /></p>
-<h3 id="mon-premier-potage-finlandais">Mon premier potage Finlandais</h3>
+<h2 id="mon-premier-potage-finlandais">Mon premier potage Finlandais</h2>
 <p>Pour réaliser ce travail vous devez dans un premier temps définir les critères dont vous aurez besoin pour réaliser un diagramme de <a href="https://fr.wikipedia.org/wiki/PERT"><strong>PERT</strong></a> et un calcule de la compléxité de votre algorithme.</p>
 <p>En terme de données pour votre algorithme vous pouvez définir pour chaque ingrédients de la recette plusieurs critères :</p>
 <ul>
@@ -86,8 +86,201 @@
 <li>…</li>
 </ul>
 <p>La <strong>contrainte principale</strong> que vous devez respecter dans votre démonstration se situe au niveau de l’<strong>exécution</strong> car la recette doit être faite <strong>le plus rapidement possible</strong> pour être <strong>servie chaude</strong> sans altérer le goût des produits qui doivent être <strong>servis au plus vite après leur cuisson</strong>.</p>
-<h3 id="soir-de-gala-à-lambassade">Soir de gala à l’ambassade</h3>
+<h2 id="méthode-de-réalisation">Méthode de réalisation</h2>
+<p>En suivant la description de la recette du potage Finlandis ci-dessus, nous allons lister la totalités des actions à mener pour réaliser 3 portions de potages.</p>
+<h3 id="définition-des-étapes-générales-de-réalisation">Définition des étapes générales de réalisation</h3>
+<p>Nous reprennons dans un premier temps la description eten faisons une liste de tâche générales</p>
+<ul>
+<li><ol type="A">
+<li>battez drois œufs comme … de bonne crème</li>
+</ol></li>
+<li><ol start="2" type="A">
+<li>versez le tout dans une … de beurre fin</li>
+</ol></li>
+<li><ol start="3" type="A">
+<li>mettez au four très chaud, … couleur blonde</li>
+</ol></li>
+<li><ol start="4" type="A">
+<li>taillez-en des morceaux … ronds d’omelette</li>
+</ol></li>
+<li><ol start="5" type="A">
+<li>saupoudrez de parmesan râpé</li>
+</ol></li>
+<li><ol start="6" type="A">
+<li>humectez le dessus avec du beurre fondu</li>
+</ol></li>
+<li><ol start="7" type="A">
+<li>passez quelques minutes avant de servir au four chaud</li>
+</ol></li>
+<li><ol start="8" type="A">
+<li>servez-les à part sur une serviette</li>
+</ol></li>
+<li><ol type="I">
+<li>envoyez avec un bon consommé clarifié</li>
+</ol></li>
+<li><ol start="10" type="A">
+<li>servir</li>
+</ol></li>
+</ul>
+<h3 id="définition-des-tâches-pour-chaque-étapes-de-réalisation">Définition des tâches pour chaque étapes de réalisation</h3>
+<p>Grâce à noytre première liste nous pouvons à présent décliner toutes les étapes de chaque tâches générales</p>
+<p><strong>A) Battez trois œufs comme pour une omelette, avec sel, poivre et persil haché, un peu de parmesan râpé et une cuillerée de bonne crème</strong></p>
+<ul>
+<li>A.1) prendre un plat</li>
+<li>A.2) casser les 3 oeufs</li>
+<li>A.3) ajouter 4gr de sel</li>
+<li>A.4) ajouter 4gr de poivre</li>
+<li>A.5) couper 4 branches de persil</li>
+<li>A.6) râper 50gr de parmesan</li>
+<li>A.7) ajouter 12gr de crème</li>
+<li>A.8) mélanger le tout dans le plat</li>
+<li>A.9) néttoyer le plat</li>
+</ul>
+<p><strong>B) versez le tout dans une poêle à omelette, dans laquelle vous aurez fait fondre d’abord un bon morceau de beurre fin</strong></p>
+<ul>
+<li>B.1) prendre un poêle</li>
+<li>B.2) découper 35gr de beurre fin</li>
+<li>B.3) faire fondre le beurre</li>
+<li>B.4) verser le contenu du plat dans la poêle</li>
+</ul>
+<p><strong>C) mettez au four très chaud, et lorsque cet appareil sera cuit d’une belle couleur blonde</strong></p>
+<ul>
+<li>C.1) pré-chauffer le four 10 minutes à 200°</li>
+<li>C.2) mettre la ploêle dans le four</li>
+<li>C.3) faire cuire pendant 6 minutes</li>
+<li>C.4) sortir la poêle du four</li>
+<li>C.5) éteindre le four</li>
+</ul>
+<p><strong>D) taillez-en des morceaux avec un coupe-pâte rond uni, mettez-les sur des croûtons de mie de pain passés au beurre et de la même grandeur que les ronds d’omelette</strong></p>
+<ul>
+<li>D.1) prendre un emporte-pièce</li>
+<li>D.2) tailler le pain de mie</li>
+<li>D.3) passer le pain de mie au grille-pain</li>
+<li>D.4) beurrer le pain de mie</li>
+<li>D.5) tailler l’omelette</li>
+<li>D.6) mettre les morceaux d’omelette sur le morceaux de mie de pain</li>
+<li>D.7) néttoyer la poêle</li>
+<li>D.8) néttoyer l’emporte-pièce</li>
+</ul>
+<p><strong>E) saupoudrez de parmesan râpé</strong></p>
+<ul>
+<li>E.1) raper 50gr de parmesan</li>
+<li>E.2) saupoudrer les morceaux de mie de pain avec l’omelette</li>
+</ul>
+<p><strong>F) humectez le dessus avec du beurre fondu</strong></p>
+<ul>
+<li>F.1) faire fondre 15gr de beurre au micro-onde dans le bol du micro-onde</li>
+<li>F.2) prendre un pinceau</li>
+<li>F.3) badigeonner les morceau d’omelette</li>
+<li>F.4) laver le bol</li>
+<li>F.5) laver le pinceau</li>
+</ul>
+<p><strong>G) passez quelques minutes avant de servir au four chaud</strong></p>
+<ul>
+<li>G.1) pré-chauffer le four 10 minutes à 200°</li>
+<li>G.2) placer le rond d’omelette sur un plat au four</li>
+<li>G.3) mettre le plat à four dans le four</li>
+<li>G.4) attendre 2 minutes</li>
+<li>G.5) sortir le plat du four</li>
+<li>G.6) éteindre le four</li>
+</ul>
+<p><strong>H) servez-les à part sur une serviette</strong></p>
+<ul>
+<li>H.1) sortir 3 serviette</li>
+<li>H.2) placer une portion sur chaque serviette</li>
+<li>H.3) néttoyer le plat à four</li>
+</ul>
+<p><strong>I) envoyez avec un bon consommé clarifié</strong></p>
+<ul>
+<li>I.1) sortir une casserolle</li>
+<li>I.2) mettre le consomé froit dans la casserole</li>
+<li>I.3) réchauffer 5 minutes le consommé</li>
+<li>I.4) sortir 3 bol</li>
+<li>I.5) verser un tier de consomé dans chaque bol</li>
+<li>I.6) nettoyer la casserole</li>
+</ul>
+<p><strong>J) servir</strong></p>
+<ul>
+<li>Apporter le plat à déguster.</li>
+</ul>
+<h3 id="définition-le-temps-dexécution-de-chaque-tâches">Définition le temps d’exécution de chaque tâches</h3>
+<p>Puisque toutes les tâches sont défini, nous devons associer à chacune d’elle un temps de réalisation.</p>
+<ul>
+<li><strong>A.1)</strong> prendre un plat <strong>0.1 min.</strong></li>
+<li><strong>A.2)</strong> casser les 12 oeufs <strong>2 min.</strong></li>
+<li><strong>A.3)</strong> ajouter 4gr de sel <strong>0.1 min.</strong></li>
+<li><strong>A.4)</strong> ajouter 4gr de poivre <strong>0.1 min.</strong></li>
+<li><strong>A.5)</strong> couper 4 branches de persil <strong>0.1 min.</strong></li>
+<li><strong>A.6)</strong> râper 50gr de parmesan <strong>1 min.</strong></li>
+<li><strong>A.7)</strong> ajouter 12gr de crème <strong>0.1 min.</strong></li>
+<li><strong>A.8)</strong> mélanger le tout dans le plat <strong>3 min.</strong></li>
+<li><strong>B.1)</strong> prendre un poêle <strong>0.1 min.</strong></li>
+<li><strong>B.2)</strong> découper 35gr de beurre fin <strong>0.1 min.</strong></li>
+<li><strong>B.3)</strong> faire fondre le beurre <strong>0.2 min.</strong></li>
+<li><strong>B.4)</strong> verser le contenu du plat dans la poêle <strong>0.5 min.</strong></li>
+<li><strong>C.1)</strong> pré-chauffer le four 10 minutes à 200° <strong>10 min.</strong></li>
+<li><strong>C.2)</strong> mettre la ploêle dans le four <strong>0.1 min.</strong></li>
+<li><strong>C.3)</strong> faire cuire pendant 6 minutes <strong>6 min.</strong></li>
+<li><strong>C.4)</strong> sortir la poêle du four <strong>0.1 min.</strong></li>
+<li><strong>C.5)</strong> éteindre le four <strong>0.1 min.</strong></li>
+<li><strong>D.1)</strong> prendre un emporte-pièce <strong>0.1 min.</strong></li>
+<li><strong>D.2)</strong> tailler le pain de mie <strong>1 min.</strong></li>
+<li><strong>D.3)</strong> passer le pain de mie au grille-pain <strong>1 min.</strong></li>
+<li><strong>D.4)</strong> beurrer le pain de mie <strong>0.5 min.</strong></li>
+<li><strong>D.5)</strong> tailler l’omelette <strong>1 min.</strong></li>
+<li><strong>D.6)</strong> mettre l’omelette sur le pain <strong>1 min.</strong></li>
+<li><strong>D.8)</strong> néttoyer l’emporte-pièce <strong>1 min.</strong></li>
+<li><strong>E.1)</strong> raper 50gr de parmesan <strong>1 min.</strong></li>
+<li><strong>E.2)</strong> saupoudrer l’omelette <strong>0.2 min.</strong></li>
+<li><strong>F.1)</strong> faire fondre 15gr de beurre au … <strong>0.2 min.</strong></li>
+<li><strong>F.2)</strong> prendre un pinceau <strong>0.1 min.</strong></li>
+<li><strong>F.3)</strong> badigeonner les morceau d’omelette <strong>0.2 min.</strong></li>
+<li><strong>G.1)</strong> pré-chauffer le four 10 minutes à 200° <strong>10 min.</strong></li>
+<li><strong>G.2)</strong> placer le rond d’omelette sur un plat au four <strong>0.2 min.</strong></li>
+<li><strong>G.3)</strong> mettre le plat à four dans le four <strong>0.1 min</strong></li>
+<li><strong>G.4)</strong> attendre 2 minutes <strong>2 min.</strong></li>
+<li><strong>G.5)</strong> sortir le plat du four <strong>0.1 min</strong></li>
+<li><strong>G.6)</strong> éteindre le four <strong>0.1 min.</strong></li>
+<li><strong>H.1)</strong> sortir 3 serviette <strong>0.1 min.</strong></li>
+<li><strong>H.2)</strong> placer une portion sur chaque serviette <strong>0.5 min.</strong></li>
+<li><strong>I.1)</strong> sortir une casserolle <strong>0.1 min.</strong></li>
+<li><strong>I.2)</strong> mettre le consomé froit dans la casserole__0.5 min.__</li>
+<li><strong>I.3)</strong> réchauffer 5 minutes le consommé <strong>5 min.</strong></li>
+<li><strong>I.4)</strong> sortir 3 bol <strong>0.1 min.</strong></li>
+<li><strong>I.5)</strong> verser un tier de consomé dans chaque bol <strong>0.5 min.</strong></li>
+</ul>
+<h3 id="chemin-critique-dans-le-diagramme-pert">Chemin critique dans le diagramme PERT</h3>
+<p>Avec toutes ces données nous sommes à présent capable de réaliser un diagramme PERT afin d’évaluer la réalisation du potage. Pour ce diagramm, nous allons placer une heure de débbut et de fin pour chaque tâche générales afin de définir la durée totale de la réalisation de trois portions de potage Finlandais.</p>
+<figure>
+<img src="img/PERT_3p.png" alt="Diagramme PERT pour la réalisation de 3 portions" /><figcaption>Diagramme PERT pour la réalisation de 3 portions</figcaption>
+</figure>
+<blockquote>
+<p>Présisualisation <a href="https://bit.ly/2RZUzBf" class="uri">https://bit.ly/2RZUzBf</a></p>
+</blockquote>
+<p>Nous pouvons constater sur ce diagramme que les tâches générales doivent être réalisées les unes après les autres. Cette enchainement nous permet de définir le chemin critique c’est à dire les étapes qui doivent obligatoirement ce suivre car chaque tâche précédente doit être terminée avant le débbut de la suivante.</p>
+<p>Ce chemin critique nous apprend que la réalisation de 3 portions de potage prour nourrire une personne prend 55.4 minutes ce qui semble complètement plausible pour la réalisation d’une telle recette.</p>
+<h2 id="soir-de-gala-à-lambassade">Soir de gala à l’ambassade</h2>
 <p>Votr erecette est un succès ! L’ambassade Russe vous demande de venir préparer pour une soirée de gala <strong>votre recette de potage Finlandais pour 500 invités</strong> de marque. Vous devez adapter votre planning de travail pour répondre aux <strong>contraintes de temps d’exécution</strong> pour un <strong>volume de production plus grand</strong>.</p>
+<h3 id="réorganisation-des-tâches-principales">Réorganisation des tâches principales</h3>
+<p>Pour assurer une telle commande nous allons créer une brigade de <strong>25 cuisiniers</strong> et <strong>25 serveurs</strong> car il est inimaginable de préparer seul un potage Finlandais pour 500 personnes. Certte brigade nous permet de repenser les tâches à réaliser car les <strong>50 personnes en cuisine</strong> doivent travailler ensembble à la réalisation des tâches principale. Il ne faut pas risquer de perte de temps pour réaliser un tel quantité.</p>
+<figure>
+<img src="img/PERT_500p_orga.png" alt="Diagramme PERT réorganisation pour 500 portions" /><figcaption>Diagramme PERT réorganisation pour 500 portions</figcaption>
+</figure>
+<blockquote>
+<p>Présisualisation <a href="https://bit.ly/2yNdJ4D" class="uri">https://bit.ly/2yNdJ4D</a></p>
+</blockquote>
+<p>Nous avons regroupé certaines tâches dans le but d’optimiser leur enchainement en en prenant pour principe que chacune de 50 personnes de la brigade est disponible. Nius constatons avec cette nouvelle organoisation que certaine tâches sont liées les unes aux autres ce qui indique quelles doicent être réalisées dans l’ordre.</p>
+<p>Que le diagramme soit prévu pour une ou plusieurs personnes la problématique du chemin critique reste le même mais ça durée peut varier plus ou moins selon l’organisation de tâche.</p>
+<h3 id="chemin-critique-pour-la-réalisation-de-500-portions">Chemin critique pour la réalisation de 500 portions</h3>
+<p>Ce nouveau diagramme présent comme pour celui pour 3 portions, une heure de départ et une heure d’arrivée, la première constatation que nous pouvons faire et que le nouvelle organisation et propotionnelement plus rapide car le temps n’est pas multiplier par 500.</p>
+<figure>
+<img src="img/PERT_500p.png" alt="Diagramme PERT pour la réalisation de 3 portions" /><figcaption>Diagramme PERT pour la réalisation de 3 portions</figcaption>
+</figure>
+<blockquote>
+<p>Présisualisation <a href="https://bit.ly/2J2CApK" class="uri">https://bit.ly/2J2CApK</a></p>
+</blockquote>
+<p>Le diagramme présente ici deux départs et deux arrivées simultanées : une pour les 25 cuisiniers et une pour les 25 serveurs. Nous avons décidé de garder un chemin critique entre toutes les tâches des cuisinier en utilisant les serveurs pour réduire les temps de préparation et de mise en place en cuisine.</p>
+<p>Cette méthode nous permet de gagner beaucoup de temps car certaines tâches sont réalisées en paralèlles et que nous nous appuyons sur la totaloité du personnel que nous avons à notre disposition.</p>
 <hr />
 <h2 id="ressources">Ressources</h2>
 <ul>
